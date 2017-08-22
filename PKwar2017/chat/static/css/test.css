@@ -1,0 +1,50 @@
+table{
+  width: 100%;
+}
+
+.input_site{
+  width: 100%;
+}
+
+#POSTECH{
+  background-color: #FFDDDD;
+}
+
+#KAIST{
+  background-color: #DDDDFF;
+}
+
+td{
+  width: 33%;
+}
+
+.input_site{
+  margin: auto;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+  width: 100%
+}
+
+td{
+  height: 300px;
+}
+
+td>p {
+  text-align: center;
+  font-size: 8pt;
+}
+
+#P_chat, #K_chat{
+  height: 250px;
+  overflow: scroll;
+}
+
+#banned_words, #banned_users{
+  display: none;
+}
+
+p{
+  font-size: 10pt;
+  overflow-wrap: break-word;
+}

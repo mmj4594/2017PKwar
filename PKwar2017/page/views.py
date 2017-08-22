@@ -10,5 +10,17 @@ def about(request):
     return render(request, "page/about.html")
 
 
+def messages(request):
+    return render(request, "page/messages.html")
+
+
 def soccer(request):
     return render(request, "page/sports/soccer.html")
+
+
+def map(request):
+    return render(request, "page/map.html")
+
+
+def supporters(request):
+    return render(request, "page/supporters.html")

@@ -1,0 +1,197 @@
+{% load staticfiles %}
+<!doctype html>
+<!--
+Material Design Lite
+Copyright 2015 Google Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License
+-->
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>2017 POSTECH-KAIST Science War</title>
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+  <link rel="stylesheet" href="{% static 'css/messages.css' %}">
+  <style>
+  #view-source {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+  }
+  </style>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <div class="science-war-header mdl-layout__header mdl-layout__header--waterfall">
+      <div class="mdl-layout__header-row">
+        <span class="science-war-title mdl-layout-title">
+          <img class="logo-image" src="{% static 'images/messages/logo.png' %}">
+        </span>
+        <!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="science-war-header-spacer mdl-layout-spacer"></div>
+        <!-- Navigation -->
+        <div class="science-war-navigation-container">
+          <nav class="science-war-navigation mdl-navigation">
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Live</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">포카전</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">경기</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">사이버포카전</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">서포터즈</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">미궁</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">일정</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">지도</a>
+          </nav>
+        </div>
+        <span class="science-war-mobile-title mdl-layout-title">
+          <img class="logo-image" src="{% static 'images/messages/logo.png' %}">
+        </span>
+      </div>
+    </div>
+
+    <div class="science-war-drawer mdl-layout__drawer">
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Live</a>
+        <a class="mdl-navigation__link" href="">포카전</a>
+        <a class="mdl-navigation__link" href="">경기</a>
+        <a class="mdl-navigation__link" href="">사이버포카전</a>
+        <a class="mdl-navigation__link" href="">서포터즈</a>
+        <a class="mdl-navigation__link" href="">미궁</a>
+        <a class="mdl-navigation__link" href="">일정</a>
+        <a class="mdl-navigation__link" href="">지도</a>
+      </nav>
+    </div>
+
+    <div class="science-war-content mdl-layout__content">
+      <a name="top"></a>
+      <div class="science-war-be-together-section mdl-typography--text-center">
+        <div class="logo-font android-slogan"><!--포스텍카이스트학생대제전--></div>
+        <div class="logo-font android-sub-slogan"><!--POSTECH-KAIST Science War--></div>
+      </div>
+
+      <div class="science-war-supporters-section">
+        <div class="science-war-supporters-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">포항공과대학교 총장 김도연</div>
+          <p class="mdl-typography--font-light">
+            친애하는 POSTECH과 KAIST 학생 여러분!<br><br>
+
+우리나라의 과학기술 발전을 선도하고 미래의 선진 조국을 이끌어갈 젊은이들의 축제인 『KAIST & POSTECH 학생 대제전』이 어느덧 15회째를 맞았습니다. 매년 양교의 많은 학생들이 포항에서 대전으로, 대전에서 포항으로 달려와 함께 땀흘리며 하나가 되고, 승패를 넘어 우의를 다지는 축제로 발전하게 된 것을 매우 기쁘게 생각합니다.<br><br>
+
+KAIST와 POSTECH이 지향하는 교육 목표는 창의성과 진취성을 바탕으로 국가와 인류를 위해 봉사하는 리더를 육성하는 것입니다. 여러분이 살아갈 미래는 수명이 120세까지 늘어나고, 지금 우리는 상상도 하지 못했던 직업들을 갖게 될 것입니다. 미래 학자들은 20년 이내에 현재 직업의 47%가 사라질 것으로 예측하고 있습니다. 이 자리에 계신 학생 여러분은 POSTECH과 KAIST를 대표하고 있지만, 그에 앞서 대한민국을 이끌어나갈 이공계의 대표선수이기도 합니다. 많은 이들을 위한 새로운 가치창출에 끊임없이 도전해 나가기를 부탁합니다.<br><br>
+
+또한 ‘빨리 가려면 혼자 가고, 멀리 가려면 함께 가라’는 말처럼 화합과 조화를 배우고 실천하는 것도 중요합니다. 여러분들이 스스로 계획하고 준비하며 참여하는 『KAIST & POSTECH 학생 대제전』은 승패도 중요하지만 미래 세계 속의 리더로 성장해 나갈 여러분의 인생에 소중한 밑거름이 될 것입니다.<br><br>
+
+오늘의 제전은 양교 학생들의 열정과 패기 그리고 공정한 페어플레이 정신을 우리들 스스로 확인하는 기회이며, 여러분들의 경기를 지켜보는 모든 분들에게는 과학 한국의 희망을 보여주는 계기가 될 것입니다.<br><br>
+
+끝으로 이번 제전이 성황리에 개최될 수 있도록 철저한 준비와 시간을 아끼지 않은 양교 준비위원회와 교직원 여러분에게 깊은 감사를 드립니다. 한가족 한마음으로 모두에게 뜻 깊고 유익한 시간이 되기를 기원합니다. 그리고 대회기간 동안 KAIST 여러분들이 불편함을 느끼지 않도록 우리 POSTECHIAN의 세심한 배려를 당부 드립니다.<br><br>
+
+감사합니다.<br><br>
+
+포항공과대학교 총장 김 도 연<br>
+        </div>
+        <div class="science-war-supporters-section-image"></div>
+
+        <div class="science-war-supporters-section">
+          <div class="science-war-supporters-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">총학생회장 김상수 (13 생명과)</div>
+            <p class="mdl-typography--font-light">
+              2학기 최대의 축제, 불사조와 용의 과학 대제전이 곧 시작합니다! 최고의 이공계 대학이 격돌하는 대한민국 유일의 이공계 대제전의 축사를 쓸 수 있어 정말 영광입니다.<br><br>
+
+저도 이제 학교 4년차를 맞이하는 사람으로, 벌써 3차례의 학생대제전 추억이 있고, 이미 한차례 포항에서도 학생대제전을 맞이해 본 경험이 있지만 이번 학생대제전은 2002년 이래 그 어떤 포카전보다 더 성대할 예정이라 기대가 큽니다. 양측 모두가 30주년을 맞이했고, 새롭게 기술 기업 체험 부스 등이 시도되며, 경기 전적 상 아무도 도달 못한 5연승을 달성하려는 카이스트와 이를 저지하려는 포스텍 간의 신경전이 뜨겁기 때문입니다. 최고의 축제를 차근차근 준비하고 있는 포준위원들에게 감사를 표하며, 경기를 땀방울로 준비하고 있는 여러 포스테키안들에게도 진심으로 뜨거운 응원을 보냅니다.<br><br>
+
+사실 학생대제전이 있는 이래 모든 선배 총학생회장은 같은 고민을 하셨을 겁니다. 과연 축사에 어떤 내용을 쓸까, 하는 고민입니다. 함부로 결과를 예단하기도 힘들고, 그렇다고 글 몇 줄로 모두를 응원하기에는 무리가 있으니까요. 그렇다고 ‘즐기면서 하자!’라고 쉽게 이야기하면 열정과 노력으로 학생대제전을 준비하고 있는 모든 포스테키안에게 실례가 되지 않을까 우려가 되기도 합니다. 저는 다만 한 가지만 약속드리겠습니다. 모든 경기의 응원장에서 뵙겠습니다. 엔타로 포스텍!<br><br>
+
+압도적인 힘으로!<br><br>
+
+포항공대 제30대 총학생회장 김상수 드림.<br>
+          </div>
+          <div class="science-war-supporters-section-image"></div>
+      </div>
+
+      <div class="science-war-supporters-section">
+        <div class="science-war-supporters-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">포카전준비위원장 최동준<br>(13 수학과)</div>
+          <p class="mdl-typography--font-light">
+            안녕하세요. 포스텍카이스트학생대제전(이하 포카전) 준비위원회 위원장 최동준입니다.<br>
+
+이번 포카전 준비위원회는 ‘Variety’라는 모토를 갖고 여러분께서 포카전의 다양성을 느낄 수 있도록 노력하였습니다. 운동경기에서는 기존의 종목 이외에 여학생 피구 종목이 추가되었으며, 여러가지 E-sports 게임을 즐기실 수 있도록 사이버 포카전이 준비되었습니다. AI게임에서는 기존과 달리 다양한 캐릭터가 등장하는 게임인 ‘Pokawatch’가 선정되었습니다.<br><br>
+
+또한 서포터즈 여러분들을 위한 다양한 행사들이 준비되어있습니다. 교류행사에서 서포터즈분들이 카이스트 서포터즈와 교류하실 수 있도록 미니게임천국과 만남의 광장이라는 행사를 준비하였으니, 이를 통해 다양한 서포터즈들을 만나실 수 있는 기회가 되길 바랍니다. 또한 교류행사에서 부스를 설치하여 준비위원회뿐만 아니라 포스텍과 카이스트의 학생들이 준비한 부스를 즐기실 수 있도록 자리가 마련되어 있으며, 개막식이 끝난 후 학생회관에 기업 체험 부스가 준비되어 있으니 이를 통해 다양한 체험도 하시길 바랍니다.<br><br>
+
+준비위원회가 구성된 후 길다면 길고 짧다면 짧은 4개월이 지나갔습니다. 그 동안 38명의 준비위원회 위원들과 선수단, 응원단, 학교 선생님들께서 밤낮으로 준비한 이번 포카전 재미있게 즐기시면 좋겠습니다.<br><br>
+        </div>
+        <div class="science-war-supporters-section-image"></div>
+    </div>
+
+      <footer class="science-war-footer mdl-mega-footer">
+        <div class="mdl-mega-footer--top-section">
+          <div class="mdl-mega-footer--left-section">
+            <button class="mdl-mega-footer--social-btn"></button>
+            &nbsp;
+            <button class="mdl-mega-footer--social-btn"></button>
+            &nbsp;
+            <button class="mdl-mega-footer--social-btn"></button>
+          </div>
+          <div class="mdl-mega-footer--right-section">
+            <a class="mdl-typography--font-light" href="#top">
+              상단으로
+              <i class="material-icons">expand_less</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="mdl-mega-footer--middle-section">
+          <p class="mdl-typography--font-light">© 2017 포카전준비위원회</p>
+          <p class="mdl-typography--font-light">현재 수정/개발중인 페이지입니다. (Powered by PoApper)</p>
+        </div>
+
+        <div class="mdl-mega-footer--bottom-section">
+          <a class="science-war-link science-war-link-menu mdl-typography--font-light" id="version-dropdown">
+            Infomation
+            <i class="material-icons">arrow_drop_up</i>
+          </a>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
+            <li class="mdl-menu__item">Facebook</li>
+            <li class="mdl-menu__item">Youtube</li>
+            <li class="mdl-menu__item">Contact</li>
+          </ul>
+          <a class="science-war-link science-war-link-menu mdl-typography--font-light" id="developers-dropdown">
+            PoApper
+            <i class="material-icons">arrow_drop_up</i>
+          </a>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
+            <li class="mdl-menu__item">Homepage</li>
+            <li class="mdl-menu__item">Facebook</li>
+            <li class="mdl-menu__item">Infomation</li>
+          </ul>
+        </div>
+
+      </footer>
+    </div>
+  </div>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+</html>
+science-war-card-image__event
