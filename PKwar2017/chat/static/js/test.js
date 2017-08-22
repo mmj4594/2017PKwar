@@ -66,16 +66,8 @@ function plaster() {
 //입력창에서 엔터 키 누를 시 sendChat 실행.
 function handle(e, team){
   if(e.keyCode == 13){
-    if(plaster() == true){
-      alert('도배 방지! 10초간 입력할 수 없습니다');
-      setTimeout(function(){
-        chatcount = 0;
-      }, 10000);
-    }
-    else{
       if(team == 'P') sendChat1();
       else sendChat2();
-    }
   }
 }
 
@@ -91,18 +83,26 @@ function sendChat1() {
     alert('You are banned user!');
   }
   else{
-    if(nickname.value != ""){
-      if(element.value != ""){
-        ws1.send(nickname.value + ": " + element.value);
-        element.value = "";
-        chatcount += 1;
-        //본인이 입력 시 스크롤 내림.
-        var el = document.getElementById('P_chat');
-        el.scrollTop = el.scrollHeight;
-      }
+    if(plaster() == true){
+      alert('도배 방지! 10초간 입력할 수 없습니다');
+      setTimeout(function(){
+        chatcount = 0;
+      }, 10000);
     }
     else{
-      alert('닉네임을 입력하세요');
+      if(nickname.value != ""){
+        if(element.value != ""){
+          ws1.send(nickname.value + ": " + element.value);
+          element.value = "";
+          chatcount += 1;
+          //본인이 입력 시 스크롤 내림.
+          var el = document.getElementById('P_chat');
+          el.scrollTop = el.scrollHeight;
+        }
+      }
+      else{
+        alert('닉네임을 입력하세요');
+      }
     }
   }
 };
@@ -115,18 +115,26 @@ function sendChat2() {
     alert('You are banned user!');
   }
   else{
-    if(nickname.value != ""){
-      if(element.value != "") {
-        ws2.send(nickname.value + ": " + element.value);
-        element.value = "";
-        chatcount += 1;
-        //본인이 입력 시 스크롤 내림.
-        var el = document.getElementById('K_chat');
-        el.scrollTop = el.scrollHeight;
-      }
+    if(plaster() == true){
+      alert('도배 방지! 10초간 입력할 수 없습니다');
+      setTimeout(function(){
+        chatcount = 0;
+      }, 10000);
     }
     else{
-      alert('닉네임을 입력하세요');
+      if(nickname.value != ""){
+        if(element.value != "") {
+          ws2.send(nickname.value + ": " + element.value);
+          element.value = "";
+          chatcount += 1;
+          //본인이 입력 시 스크롤 내림.
+          var el = document.getElementById('K_chat');
+          el.scrollTop = el.scrollHeight;
+        }
+      }
+      else{
+        alert('닉네임을 입력하세요');
+      }
     }
   }
 };
