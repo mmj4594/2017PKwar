@@ -1,89 +1,11 @@
+{% extends "page/layout.html" %}
 {% load staticfiles %}
-<!doctype html>
-<!--
-Material Design Lite
-Copyright 2015 Google Inc. All rights reserved.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/sports/soccer.css' %}">
+{% endblock %}
 
-https://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License
--->
-
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <title>2017 POSTECH-KAIST Science War</title>
-
-  <!-- Page styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
-  <link rel="stylesheet" href="{% static 'css/sports/soccer.css' %}">
-  <style>
-  #view-source {
-    position: fixed;
-    display: block;
-    right: 0;
-    bottom: 0;
-    margin-right: 40px;
-    margin-bottom: 40px;
-    z-index: 900;
-  }
-  </style>
-</head>
-<body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-    <div class="science-war-header mdl-layout__header mdl-layout__header--waterfall">
-      <div class="mdl-layout__header-row">
-        <span class="science-war-title mdl-layout-title">
-          <img class="logo-image" src="{% static 'images/sports/soccer/logo.png' %}">
-        </span>
-        <!-- Add spacer, to align navigation to the right in desktop -->
-        <div class="science-war-header-spacer mdl-layout-spacer"></div>
-        <!-- Navigation -->
-        <div class="science-war-navigation-container">
-          <nav class="science-war-navigation mdl-navigation">
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Live</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">포카전</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">경기</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">사이버포카전</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">서포터즈</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">미궁</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">일정</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">지도</a>
-          </nav>
-        </div>
-        <span class="science-war-mobile-title mdl-layout-title">
-          <img class="logo-image" src="{% static 'images/sports/soccer/logo.png' %}">
-        </span>
-      </div>
-    </div>
-
-    <div class="science-war-drawer mdl-layout__drawer">
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Live</a>
-        <a class="mdl-navigation__link" href="">포카전</a>
-        <a class="mdl-navigation__link" href="">경기</a>
-        <a class="mdl-navigation__link" href="">사이버포카전</a>
-        <a class="mdl-navigation__link" href="">서포터즈</a>
-        <a class="mdl-navigation__link" href="">미궁</a>
-        <a class="mdl-navigation__link" href="">일정</a>
-        <a class="mdl-navigation__link" href="">지도</a>
-      </nav>
-    </div>
-
+{% block content %}
     <div class="science-war-content mdl-layout__content">
       <a name="top"></a>
       <div class="science-war-be-together-section mdl-typography--text-center">
@@ -242,53 +164,8 @@ limitations under the License
           </div>
         </div>
       </div>
+{% endblock %}
 
-      <footer class="science-war-footer mdl-mega-footer">
-        <div class="mdl-mega-footer--top-section">
-          <div class="mdl-mega-footer--left-section">
-            <button class="mdl-mega-footer--social-btn"></button>
-            &nbsp;
-            <button class="mdl-mega-footer--social-btn"></button>
-            &nbsp;
-            <button class="mdl-mega-footer--social-btn"></button>
-          </div>
-          <div class="mdl-mega-footer--right-section">
-            <a class="mdl-typography--font-light" href="#top">
-              상단으로
-              <i class="material-icons">expand_less</i>
-            </a>
-          </div>
-        </div>
-
-        <div class="mdl-mega-footer--middle-section">
-          <p class="mdl-typography--font-light">© 2017 포카전준비위원회</p>
-          <p class="mdl-typography--font-light">현재 수정/개발중인 페이지입니다. (Powered by PoApper)</p>
-        </div>
-
-        <div class="mdl-mega-footer--bottom-section">
-          <a class="science-war-link science-war-link-menu mdl-typography--font-light" id="version-dropdown">
-            Infomation
-            <i class="material-icons">arrow_drop_up</i>
-          </a>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-            <li class="mdl-menu__item">Facebook</li>
-            <li class="mdl-menu__item">Youtube</li>
-            <li class="mdl-menu__item">Contact</li>
-          </ul>
-          <a class="science-war-link science-war-link-menu mdl-typography--font-light" id="developers-dropdown">
-            PoApper
-            <i class="material-icons">arrow_drop_up</i>
-          </a>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-            <li class="mdl-menu__item">Homepage</li>
-            <li class="mdl-menu__item">Facebook</li>
-            <li class="mdl-menu__item">Infomation</li>
-          </ul>
-        </div>
-
-      </footer>
-    </div>
-  </div>
+{% block script %}
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-</body>
-</html>
+{% endblock %}
