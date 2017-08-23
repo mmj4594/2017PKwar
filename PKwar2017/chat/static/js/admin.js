@@ -48,20 +48,6 @@ setInterval(function(){
 
 
 
-var plaster_limit = 4; //도배 제한 리밋.
-var chatcount = 0;
-setInterval(function(){
-  if(chatcount >= 1 && chatcount <= plaster_limit) chatcount -= 1;
-}, 1000)
-//도배 방지
-function plaster() {
-  if(chatcount > plaster_limit) return true;
-  else return false;
-}
-
-
-
-
 
 //입력창에서 엔터 키 누를 시 sendChat 실행.
 function handle(e, team){
@@ -83,18 +69,11 @@ function sendChat1() {
     alert('You are banned user!');
   }
   else{
-    if(plaster() == true){
-      alert('도배 방지! 10초간 입력할 수 없습니다');
-      setTimeout(function(){
-        chatcount = 0;
-      }, 10000);
-    }
-    else{
+    {
       if(nickname.value != ""){
         if(element.value != ""){
           ws1.send(nickname.value + ": " + element.value);
           element.value = "";
-          chatcount += 1;
           //본인이 입력 시 스크롤 내림.
           var el = document.getElementById('P_chat');
           el.scrollTop = el.scrollHeight;
@@ -115,18 +94,11 @@ function sendChat2() {
     alert('You are banned user!');
   }
   else{
-    if(plaster() == true){
-      alert('도배 방지! 10초간 입력할 수 없습니다');
-      setTimeout(function(){
-        chatcount = 0;
-      }, 10000);
-    }
-    else{
+    {
       if(nickname.value != ""){
         if(element.value != "") {
           ws2.send(nickname.value + ": " + element.value);
           element.value = "";
-          chatcount += 1;
           //본인이 입력 시 스크롤 내림.
           var el = document.getElementById('K_chat');
           el.scrollTop = el.scrollHeight;
@@ -146,17 +118,10 @@ function sendChat2() {
 ws1.onmessage = function(message) {
   var paragraph = document.createElement("p");
   var user_id=getCookie("username");
-  //필터링됨
-  if(filtering(message.data) == true){
-    var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
-    paragraph.appendChild(node);
-    paragraph.className += (user_id);
-  }
-  else{
+  {
     //채팅 내용을 사용자에게 추가해줌.
-    var node = document.createTextNode(message.data);
+    var node = document.createTextNode(message.data + " #" + user_id);
     paragraph.appendChild(node);
-    paragraph.className += (user_id);
   }
 
   //스크롤 자동 내림.
@@ -181,31 +146,16 @@ ws1.onmessage = function(message) {
       }
     }
   }, 10000)
-
-  //일정 시간 후 자동 삭제.(현재 500초)
-  setTimeout(function(){
-    var parent = document.getElementById('P_chat');
-    var child = document.getElementsByClassName(user_id);
-    parent.removeChild(child[0]);
-  }, 500000);
 };
 
 //메시지 수신(채팅룸2)
 ws2.onmessage = function(message) {
   var paragraph = document.createElement("p");
   var user_id=getCookie("username");
-  //필터링됨
-  if(filtering(message.data) == true){
-    var user_id=getCookie("username");
-    var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
-    paragraph.appendChild(node);
-    paragraph.className += (user_id);
-  }
-  else{
+  {
     //채팅 내용을 사용자에게 추가해줌.
-    var node = document.createTextNode(message.data);
+    var node = document.createTextNode(message.data + " #" + user_id);
     paragraph.appendChild(node);
-    paragraph.className += (user_id);
   }
 
   //스크를 자동 내림.
@@ -230,29 +180,8 @@ ws2.onmessage = function(message) {
       }
     }
   }, 10000)
-
-  //일정 시간 후 자동 삭제(현재 500초)
-  setTimeout(function(){
-    var parent = document.getElementById('K_chat');
-    var child = document.getElementsByClassName(user_id);
-    parent.removeChild(child[0]);
-  }, 500000);
 };
 
-
-
-
-//욕설 필터링
-function filtering(content){
-  var banned_words = document.getElementById('banned_words');
-  for (var i = 0; i < banned_words.childElementCount; i++){
-    //필터링에 걸리면
-    if(content.indexOf(banned_words.children[i].innerHTML) >= 0){
-      return true;
-    }
-  }
-  return false;
-}
 
 
 //밴 유저 필터링.

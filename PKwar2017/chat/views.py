@@ -13,6 +13,11 @@ def index(request):
     return render(request, "chat/index.html", context)
 
 
+def adminindex(request):
+
+    return render(request, "chat/adminindex.html")
+
+
 def reload_banuser(request):
     incremenet = int(request.GET['increment'])
     incremenet_to = incremenet + 10
