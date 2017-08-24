@@ -92,7 +92,7 @@ function sendChat1() {
     else{
       if(nickname.value != ""){
         if(element.value != ""){
-          ws1.send(nickname.value + ": " + element.value);
+          ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
           element.value = "";
           chatcount += 1;
           //본인이 입력 시 스크롤 내림.
@@ -124,7 +124,7 @@ function sendChat2() {
     else{
       if(nickname.value != ""){
         if(element.value != "") {
-          ws2.send(nickname.value + ": " + element.value);
+          ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
           element.value = "";
           chatcount += 1;
           //본인이 입력 시 스크롤 내림.
@@ -145,98 +145,107 @@ function sendChat2() {
 //메시지 수신(채팅룸1)
 ws1.onmessage = function(message) {
   var paragraph = document.createElement("p");
-  var user_id=getCookie("username");
-  //필터링됨
-  if(filtering(message.data) == true){
-    var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
-    paragraph.appendChild(node);
-    paragraph.className += (user_id);
-  }
-  else{
-    //채팅 내용을 사용자에게 추가해줌.
-    var node = document.createTextNode(message.data);
-    paragraph.appendChild(node);
-    paragraph.className += (user_id);
-  }
-
-  //스크롤 자동 내림.
-  var el = document.getElementById('P_chat');
-  if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
-    el.appendChild(paragraph);
-    el.scrollTop = el.scrollHeight;
-  }
-  else{
-    el.appendChild(paragraph);
-  }
-
-  //일정 시간(10초)마다 밴 유저 목록 확인. 밴되면 내용 전부 삭제.
-  setInterval(function(){
-    if(banusercheck(user_id) == true){
-      var parent = document.getElementById('P_chat');
-      var child = parent.getElementsByClassName(user_id);
-      var child_length = child.length;
-      for(var i = 0; i < child_length; i++){
-        //parent.removeChild(child[0]);
-        child[i].innerHTML = "deleted message";
-      }
+  var num = (message.data).indexOf("$!:@{#4'}>+*&:|");
+  if(num >= 0){
+    var anotheruser_id = (message.data).slice(num + 15, num + 15 + 7);
+    //필터링됨
+    if(filtering(message.data) == true){
+      var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
+      paragraph.appendChild(node);
+      //user_id를 추출해냄.
+      paragraph.className += (anotheruser_id);
     }
-  }, 10000)
+    else{
+      //채팅 내용을 사용자에게 추가해줌.
+      var node = document.createTextNode((message.data).slice(0, num));
+      paragraph.appendChild(node);
+      //user_id를 추출해냄.
+      paragraph.className += (anotheruser_id);
+    }
 
-  //일정 시간 후 자동 삭제.(현재 500초)
-  setTimeout(function(){
-    var parent = document.getElementById('P_chat');
-    var child = document.getElementsByClassName(user_id);
-    parent.removeChild(child[0]);
-  }, 500000);
+    //스크롤 자동 내림.
+    var el = document.getElementById('P_chat');
+    if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
+      el.appendChild(paragraph);
+      el.scrollTop = el.scrollHeight;
+    }
+    else{
+      el.appendChild(paragraph);
+    }
+
+    //일정 시간(10초)마다 밴 유저 목록 확인. 밴되면 내용 전부 삭제.
+    setInterval(function(){
+      if(banusercheck(anotheruser_id) == true){
+        var parent = document.getElementById('P_chat');
+        var child = parent.getElementsByClassName(anotheruser_id);
+        var child_length = child.length;
+        for(var i = 0; i < child_length; i++){
+          //parent.removeChild(child[0]);
+          child[i].innerHTML = "deleted message";
+        }
+      }
+    }, 10000)
+
+    //일정 시간 후 자동 삭제.(현재 500초)
+    setTimeout(function(){
+      var parent = document.getElementById('P_chat');
+      var child = document.getElementsByClassName(anotheruser_id);
+      parent.removeChild(child[0]);
+    }, 500000);
+  }
 };
 
 //메시지 수신(채팅룸2)
 ws2.onmessage = function(message) {
   var paragraph = document.createElement("p");
-  var user_id=getCookie("username");
-  //필터링됨
-  if(filtering(message.data) == true){
-    var user_id=getCookie("username");
-    var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
-    paragraph.appendChild(node);
-    paragraph.className += (user_id);
-  }
-  else{
-    //채팅 내용을 사용자에게 추가해줌.
-    var node = document.createTextNode(message.data);
-    paragraph.appendChild(node);
-    paragraph.className += (user_id);
-  }
-
-  //스크를 자동 내림.
-  var el = document.getElementById('K_chat');
-  if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
-    el.appendChild(paragraph);
-    el.scrollTop = el.scrollHeight;
-  }
-  else{
-    el.appendChild(paragraph);
-  }
-
-  //일정 시간(10초)마다 밴 유저 목록 확인. 밴되면 내용 전부 삭제.
-  setInterval(function(){
-    if(banusercheck(user_id) == true){
-      var parent = document.getElementById('K_chat');
-      var child = parent.getElementsByClassName(user_id);
-      var child_length = child.length;
-      for(var i = 0; i < child_length; i++){
-        //parent.removeChild(child[0]);
-        child[i].innerHTML = "deleted message";
-      }
+  var num = (message.data).indexOf("$!:@{#4'}>+*&:|");
+  if(num >= 0){
+    var anotheruser_id = (message.data).slice(num + 15, num + 15 + 7);
+    //필터링됨
+    if(filtering(message.data) == true){
+      var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
+      paragraph.appendChild(node);
+      //user_id를 추출해냄.
+      paragraph.className += (anotheruser_id);
     }
-  }, 10000)
+    else{
+      //채팅 내용을 사용자에게 추가해줌.
+      var node = document.createTextNode((message.data).slice(0, num));
+      paragraph.appendChild(node);
+      //user_id를 추출해냄.
+      paragraph.className += (anotheruser_id);
+    }
 
-  //일정 시간 후 자동 삭제(현재 500초)
-  setTimeout(function(){
-    var parent = document.getElementById('K_chat');
-    var child = document.getElementsByClassName(user_id);
-    parent.removeChild(child[0]);
-  }, 500000);
+    //스크를 자동 내림.
+    var el = document.getElementById('K_chat');
+    if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
+      el.appendChild(paragraph);
+      el.scrollTop = el.scrollHeight;
+    }
+    else{
+      el.appendChild(paragraph);
+    }
+
+    //일정 시간(10초)마다 밴 유저 목록 확인. 밴되면 내용 전부 삭제.
+    setInterval(function(){
+      if(banusercheck(anotheruser_id) == true){
+        var parent = document.getElementById('K_chat');
+        var child = parent.getElementsByClassName(anotheruser_id);
+        var child_length = child.length;
+        for(var i = 0; i < child_length; i++){
+          //parent.removeChild(child[0]);
+          child[i].innerHTML = "deleted message";
+        }
+      }
+    }, 10000)
+
+    //일정 시간 후 자동 삭제(현재 500초)
+    setTimeout(function(){
+      var parent = document.getElementById('K_chat');
+      var child = document.getElementsByClassName(anotheruser_id);
+      parent.removeChild(child[0]);
+    }, 500000);
+  }
 };
 
 
@@ -278,7 +287,7 @@ function setCookie(cname) {
     var d = new Date();
     d.setTime(d.getTime() + (1*60*60*1000));
     var expires = "expires=" + d.toGMTString();
-    cvalue = Math.floor(Math.random() * 10) * 1000000 +  Math.floor(Math.random() * 10) * 100000 +  Math.floor(Math.random() * 10) * 10000 + Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10);
+    var cvalue = Math.floor(Math.random() * 10) * 1000000 +  Math.floor(Math.random() * 10) * 100000 +  Math.floor(Math.random() * 10) * 10000 + Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10);
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
