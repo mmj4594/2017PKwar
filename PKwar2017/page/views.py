@@ -1,6 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, Http404
 # Create your views here.
+
+def to_home(request):
+    return redirect('/home/')
+
 
 def home(request):
     return render(request, "page/home.html")

@@ -4,6 +4,14 @@ var ws1 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://
 var ws2 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://') +  window.location.host + '/PKwar_chat/' + 2)
 
 
+//입력창에서 엔터 키 누를 시 sendChat 실행.
+function handle(e, team){
+  if(e.keyCode == 13){
+      if(team == 'P') sendChat1();
+      else sendChat2();
+  }
+}
+
 
 
 //10초마다 밴 정보 로드.
@@ -46,33 +54,16 @@ setInterval(function(){
 
 
 
-
-
-
-//입력창에서 엔터 키 누를 시 sendChat 실행.
-function handle(e, team){
-  if(e.keyCode == 13){
-      if(team == 'P') sendChat1();
-      else sendChat2();
-  }
-}
-
-
-
-
 //채팅룸으로 메시지 전달.
 function sendChat1() {
   var element = document.getElementById("p_input");
   var nickname = document.getElementById("p_nickname");
   var user_id=getCookie("username");
-  if(banusercheck(user_id) == true){
-    alert('You are banned user!');
-  }
-  else{
+  {
     {
       if(nickname.value != ""){
         if(element.value != ""){
-          ws1.send(nickname.value + ": " + element.value);
+          ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
           element.value = "";
           //본인이 입력 시 스크롤 내림.
           var el = document.getElementById('P_chat');
@@ -90,14 +81,11 @@ function sendChat2() {
   var element = document.getElementById("k_input");
   var nickname = document.getElementById("k_nickname");
   var user_id=getCookie("username");
-  if(banusercheck(user_id) == true){
-    alert('You are banned user!');
-  }
-  else{
+  {
     {
       if(nickname.value != ""){
         if(element.value != "") {
-          ws2.send(nickname.value + ": " + element.value);
+          ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
           element.value = "";
           //본인이 입력 시 스크롤 내림.
           var el = document.getElementById('K_chat');
@@ -117,83 +105,55 @@ function sendChat2() {
 //메시지 수신(채팅룸1)
 ws1.onmessage = function(message) {
   var paragraph = document.createElement("p");
-  var user_id=getCookie("username");
-  {
-    //채팅 내용을 사용자에게 추가해줌.
-    var node = document.createTextNode(message.data + " #" + user_id);
-    paragraph.appendChild(node);
-  }
-
-  //스크롤 자동 내림.
-  var el = document.getElementById('P_chat');
-  if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
-    el.appendChild(paragraph);
-    el.scrollTop = el.scrollHeight;
-  }
-  else{
-    el.appendChild(paragraph);
-  }
-
-  //일정 시간(10초)마다 밴 유저 목록 확인. 밴되면 내용 전부 삭제.
-  setInterval(function(){
-    if(banusercheck(user_id) == true){
-      var parent = document.getElementById('P_chat');
-      var child = parent.getElementsByClassName(user_id);
-      var child_length = child.length;
-      for(var i = 0; i < child_length; i++){
-        //parent.removeChild(child[0]);
-        child[i].innerHTML = "deleted message";
-      }
+  var num = (message.data).indexOf("$!:@{#4'}>+*&:|");
+  if(num >= 0){
+    var anotheruser_id = (message.data).slice(num + 15, num + 15 + 7);
+    {
+      //채팅 내용을 사용자에게 추가해줌.
+      var node = document.createTextNode((message.data).slice(0, num) + "  #" + anotheruser_id);
+      paragraph.appendChild(node);
+      //user_id를 추출해냄.
+      paragraph.className += (anotheruser_id);
     }
-  }, 10000)
+
+    //스크롤 자동 내림.
+    var el = document.getElementById('P_chat');
+    if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
+      el.appendChild(paragraph);
+      el.scrollTop = el.scrollHeight;
+    }
+    else{
+      el.appendChild(paragraph);
+    }
+
+  }
 };
 
 //메시지 수신(채팅룸2)
 ws2.onmessage = function(message) {
   var paragraph = document.createElement("p");
-  var user_id=getCookie("username");
-  {
-    //채팅 내용을 사용자에게 추가해줌.
-    var node = document.createTextNode(message.data + " #" + user_id);
-    paragraph.appendChild(node);
-  }
-
-  //스크를 자동 내림.
-  var el = document.getElementById('K_chat');
-  if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
-    el.appendChild(paragraph);
-    el.scrollTop = el.scrollHeight;
-  }
-  else{
-    el.appendChild(paragraph);
-  }
-
-  //일정 시간(10초)마다 밴 유저 목록 확인. 밴되면 내용 전부 삭제.
-  setInterval(function(){
-    if(banusercheck(user_id) == true){
-      var parent = document.getElementById('K_chat');
-      var child = parent.getElementsByClassName(user_id);
-      var child_length = child.length;
-      for(var i = 0; i < child_length; i++){
-        //parent.removeChild(child[0]);
-        child[i].innerHTML = "deleted message";
-      }
+  var num = (message.data).indexOf("$!:@{#4'}>+*&:|");
+  if(num >= 0){
+    var anotheruser_id = (message.data).slice(num + 15, num + 15 + 7);
+    {
+      //채팅 내용을 사용자에게 추가해줌.
+      var node = document.createTextNode((message.data).slice(0, num) + "  #" + anotheruser_id);
+      paragraph.appendChild(node);
+      //user_id를 추출해냄.
+      paragraph.className += (anotheruser_id);
     }
-  }, 10000)
-};
 
-
-
-//밴 유저 필터링.
-function banusercheck(user_id){
-  var banned_users = document.getElementById('banned_users');
-  for(var i = 0; i < banned_users.childElementCount; i++){
-    if(user_id == banned_users.children[i].innerHTML) return true;
+    //스크를 자동 내림.
+    var el = document.getElementById('K_chat');
+    if(el.scrollHeight - el.scrollTop == el.offsetHeight) {
+      el.appendChild(paragraph);
+      el.scrollTop = el.scrollHeight;
+    }
+    else{
+      el.appendChild(paragraph);
+    }
   }
-  return false;
-}
-
-
+};
 
 
 
@@ -205,11 +165,21 @@ function banusercheck(user_id){
 //쿠키
 function setCookie(cname) {
     var d = new Date();
-    d.setTime(d.getTime() + (1*60*60*1000));
+    d.setTime(d.getTime() + (5*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
-    cvalue = Math.floor(Math.random() * 10) * 1000000 +  Math.floor(Math.random() * 10) * 100000 +  Math.floor(Math.random() * 10) * 10000 + Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10);
+    var cvalue = makeid();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (var i = 0; i < 7; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  return text;
+}
+
+
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -228,10 +198,22 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-    var user=getCookie("username");
-    if (user == ""){
-        setCookie("username");
+  var is_admin = "FALSE";
+  var user=getCookie("username");
+  if (user == ""){
+      setCookie("username");
+  }
+  else{
+    var admins = document.getElementById("admins");
+    for(var i = 0; i < admins.childElementCount; i++){
+      if(user == admins.children[i].innerHTML) is_admin = 'TRUE';
     }
+  }
+
+  if(is_admin == "FALSE") {
+    alert('You are not admin!');
+    window.location.replace("/chat/");
+  }
 }
 
 

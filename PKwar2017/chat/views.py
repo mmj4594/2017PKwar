@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, Http404
-from .models import BannedWord, BannedUser
+from .models import BannedWord, BannedUser, AdminUser
 
 
 def index(request):
@@ -14,8 +14,15 @@ def index(request):
 
 
 def adminindex(request):
-
-    return render(request, "chat/adminindex.html")
+    banned_words = BannedWord.objects.all()
+    banned_users = BannedUser.objects.all()
+    admin_users = AdminUser.objects.all()
+    context = {
+    'banned_words': banned_words,
+    'banned_users': banned_users,
+    'admin_users': admin_users,
+    }
+    return render(request, "chat/adminindex.html", context)
 
 
 def reload_banuser(request):

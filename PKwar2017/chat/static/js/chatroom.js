@@ -152,7 +152,6 @@ ws1.onmessage = function(message) {
     if(filtering(message.data) == true){
       var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
       paragraph.appendChild(node);
-      //user_id를 추출해냄.
       paragraph.className += (anotheruser_id);
     }
     else{
@@ -205,7 +204,6 @@ ws2.onmessage = function(message) {
     if(filtering(message.data) == true){
       var node = document.createTextNode("필터링된 닉네임 또는 메시지 입니다.");
       paragraph.appendChild(node);
-      //user_id를 추출해냄.
       paragraph.className += (anotheruser_id);
     }
     else{
@@ -285,11 +283,24 @@ function banusercheck(user_id){
 //쿠키
 function setCookie(cname) {
     var d = new Date();
-    d.setTime(d.getTime() + (1*60*60*1000));
+    d.setTime(d.getTime() + (5*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
-    var cvalue = Math.floor(Math.random() * 10) * 1000000 +  Math.floor(Math.random() * 10) * 100000 +  Math.floor(Math.random() * 10) * 10000 + Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10);
+    var cvalue = makeid();
+    //Math.floor(Math.random() * 10) * 1000000 +  Math.floor(Math.random() * 10) * 100000 +  Math.floor(Math.random() * 10) * 10000 + Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10);
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 7; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+
 
 function getCookie(cname) {
     var name = cname + "=";

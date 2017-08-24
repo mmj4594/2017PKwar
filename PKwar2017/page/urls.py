@@ -3,6 +3,7 @@ from . import views
 
 app_name = 'elections'
 urlpatterns = [
+    url(r'^$', views.to_home),
     url(r'^home/$', views.home),
     url(r'^about/$', views.about),
     url(r'^messages/$', views.messages),

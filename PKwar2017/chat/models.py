@@ -7,6 +7,11 @@ class BannedWord(models.Model):
         return self.banned_word
 
 class BannedUser(models.Model):
-    banned_user = models.IntegerField()
+    banned_user = models.TextField()
     def __str__(self):
         return str(self.banned_user)
+
+class AdminUser(models.Model):
+    admin_user = models.TextField()
+    def __str__(self):
+        return str(self.admin_user)

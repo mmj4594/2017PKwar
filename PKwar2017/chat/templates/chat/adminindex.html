@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chat</title>
+  <title>Chat_admin</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="{% static 'css/test.css' %}">
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
   <script src="{% static 'js/jquery-3.2.1.min.js' %}">
 
   </script>
@@ -35,6 +35,25 @@
     </tr>
   </table>
 
+  <h2>banned words</h2>
+  <div id="banned_words">
+    {% for banned_word in banned_words %}
+    <a href="#">{{banned_word.banned_word}}</a>
+    {% endfor %}
+  </div>
+
+  <h2>banned users</h2>
+  <div id="banned_users">
+    {% for banned_user in banned_users %}
+    <a href="#">{{banned_user.banned_user}}</a>
+    {% endfor %}
+  </div>
+
+  <div id="admins">
+    {% for admin_user in admin_users %}
+    <a href="#">{{admin_user.admin_user}}</a>
+    {% endfor %}
+  </div>
 
   <script type="text/javascript" src="{% static 'js/admin.js' %}">
   </script>
