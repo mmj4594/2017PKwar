@@ -5,26 +5,32 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 def to_home(request):
     return redirect('/home/')
 
-
 def home(request):
     return render(request, "page/home.html")
-
 
 def about(request):
     return render(request, "page/about.html")
 
-
 def messages(request):
     return render(request, "page/messages.html")
 
+def sports(request):
+    return render(request, "page/sports.html")
 
 def soccer(request):
     return render(request, "page/sports/soccer.html")
 
+def cyber(request):
+    return render(request, "page/cyber.html")
+
+def starcraft(request):
+    return render(request, "page/cyber/starcraft.html")
 
 def map(request):
     return render(request, "page/map.html")
 
-
 def supporters(request):
     return render(request, "page/supporters.html")
+
+def poapper(request):
+    return render(request, "page/poapper.html")
