@@ -677,6 +677,19 @@ a img{
   text-align: center;
 }
 
+.science-war-event-card__ai.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../images/ai.png') center / cover;
+}
+
+.science-war-event-card__ai > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(235, 207, 253, 0.8);
+  text-align: center;
+}
+
 .science-war-event-card__badminton.mdl-card {
   width: 150px;
   height: 150px;
@@ -798,6 +811,19 @@ a img{
     height: 30px;
     padding: 8px;
     background: rgba(61, 61, 61, 0.8);
+    text-align: center;
+  }
+
+  .science-war-event-card__ai.mdl-card {
+    width: 150px;
+    height: 150px;
+    background: url('../images/ai.png') center / cover;
+  }
+
+  .science-war-event-card__ai > .mdl-card__actions {
+    height: 40px;
+    padding: 10px;
+    background: rgba(235, 207, 253, 0.8);
     text-align: center;
   }
 
