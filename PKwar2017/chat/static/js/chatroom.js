@@ -44,11 +44,31 @@ setInterval(function(){
   });
 }, 10000)
 
+setInterval(function(){
+  $.ajax({
+    type: "GET",
+    url: '/chat/reload_freeze/',
+    data: {'increment': increment}
+  })
+  .done(function(response){
+    var parent = document.getElementById('is_freeze');
+    var count = parent.childElementCount;
+    for(var i = 0; i < count; i++){
+      var child = parent.children[0];
+      parent.removeChild(child);
+    }
+    $('#is_freeze').append(response);
+    increment += 10;
+  });
+}, 10000)
 
 
 
 
-var plaster_limit = 4; //도배 제한 리밋.
+
+
+
+var plaster_limit = 3; //도배 제한 리밋.
 var chatcount = 0;
 setInterval(function(){
   if(chatcount >= 1 && chatcount <= plaster_limit) chatcount -= 1;
@@ -79,10 +99,12 @@ function sendChat1() {
   var element = document.getElementById("p_input");
   var nickname = document.getElementById("p_nickname");
   var user_id=getCookie("username");
+  //밴유저
   if(banusercheck(user_id) == true){
     alert('You are banned user!');
   }
   else{
+    //도배방지
     if(plaster() == true){
       alert('도배 방지! 10초간 입력할 수 없습니다');
       setTimeout(function(){
@@ -90,18 +112,25 @@ function sendChat1() {
       }, 10000);
     }
     else{
-      if(nickname.value != ""){
-        if(element.value != ""){
-          ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
-          element.value = "";
-          chatcount += 1;
-          //본인이 입력 시 스크롤 내림.
-          var el = document.getElementById('P_chat');
-          el.scrollTop = el.scrollHeight;
-        }
+      //프리징
+      var is_freeze = document.getElementById('is_freeze');
+      if(is_freeze.children[0].innerHTML == 'True'){
+        alert('Freezing!');
       }
       else{
-        alert('닉네임을 입력하세요');
+        if(nickname.value != ""){
+          if(element.value != ""){
+            ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
+            element.value = "";
+            chatcount += 1;
+            //본인이 입력 시 스크롤 내림.
+            var el = document.getElementById('P_chat');
+            el.scrollTop = el.scrollHeight;
+          }
+        }
+        else{
+          alert('닉네임을 입력하세요');
+        }
       }
     }
   }
@@ -111,10 +140,12 @@ function sendChat2() {
   var element = document.getElementById("k_input");
   var nickname = document.getElementById("k_nickname");
   var user_id=getCookie("username");
+  //밴 유저
   if(banusercheck(user_id) == true){
     alert('You are banned user!');
   }
   else{
+    //도배
     if(plaster() == true){
       alert('도배 방지! 10초간 입력할 수 없습니다');
       setTimeout(function(){
@@ -122,18 +153,25 @@ function sendChat2() {
       }, 10000);
     }
     else{
-      if(nickname.value != ""){
-        if(element.value != "") {
-          ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
-          element.value = "";
-          chatcount += 1;
-          //본인이 입력 시 스크롤 내림.
-          var el = document.getElementById('K_chat');
-          el.scrollTop = el.scrollHeight;
-        }
+      //프리징
+      var is_freeze = document.getElementById('is_freeze');
+      if(is_freeze.children[0].innerHTML == 'True'){
+        alert('관리자가 채팅창을 얼렸습니다!');
       }
       else{
-        alert('닉네임을 입력하세요');
+        if(nickname.value != ""){
+          if(element.value != "") {
+            ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
+            element.value = "";
+            chatcount += 1;
+            //본인이 입력 시 스크롤 내림.
+            var el = document.getElementById('K_chat');
+            el.scrollTop = el.scrollHeight;
+          }
+        }
+        else{
+          alert('닉네임을 입력하세요');
+        }
       }
     }
   }
@@ -280,6 +318,8 @@ function banusercheck(user_id){
 
 
 
+
+
 //쿠키
 function setCookie(cname) {
     var d = new Date();
@@ -299,8 +339,6 @@ function makeid() {
 
   return text;
 }
-
-
 
 function getCookie(cname) {
     var name = cname + "=";

@@ -52,6 +52,26 @@ setInterval(function(){
   });
 }, 10000)
 
+setInterval(function(){
+  $.ajax({
+    type: "GET",
+    url: '/chat/reload_freeze/',
+    data: {'increment': increment}
+  })
+  .done(function(response){
+    var parent = document.getElementById('is_freeze');
+    var count = parent.childElementCount;
+    for(var i = 0; i < count; i++){
+      var child = parent.children[0];
+      parent.removeChild(child);
+    }
+    $('#is_freeze').append(response);
+    increment += 10;
+  });
+}, 10000)
+
+
+
 
 
 //채팅룸으로 메시지 전달.
@@ -63,7 +83,7 @@ function sendChat1() {
     {
       if(nickname.value != ""){
         if(element.value != ""){
-          ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
+          ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|");
           element.value = "";
           //본인이 입력 시 스크롤 내림.
           var el = document.getElementById('P_chat');
@@ -85,7 +105,7 @@ function sendChat2() {
     {
       if(nickname.value != ""){
         if(element.value != "") {
-          ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
+          ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|");
           element.value = "";
           //본인이 입력 시 스크롤 내림.
           var el = document.getElementById('K_chat');

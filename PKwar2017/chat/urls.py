@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^admin/$', views.adminindex),
     url(r'^reload_banuser/$', views.reload_banuser),
     url(r'^reload_banword/$', views.reload_banword),
+    url(r'^reload_freeze/$', views.reload_freeze),
 ]

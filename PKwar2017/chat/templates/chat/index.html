@@ -46,6 +46,11 @@
     <a href="#">{{banned_user.banned_user}}</a>
     {% endfor %}
   </div>
+  <div id="is_freeze">
+    {% for is_freeze in is_freeze %}
+    <a href="#">{{is_freeze.is_freeze}}</a>
+    {% endfor %}
+  </div>
 
   <script type="text/javascript" src="{% static 'js/chatroom.js' %}">
   </script>

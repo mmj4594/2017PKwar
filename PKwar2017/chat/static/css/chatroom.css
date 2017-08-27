@@ -40,7 +40,7 @@ td>p {
   overflow: scroll;
 }
 
-#banned_words, #banned_users{
+#banned_words, #banned_users, #is_freeze{
   display: none;
 }
 

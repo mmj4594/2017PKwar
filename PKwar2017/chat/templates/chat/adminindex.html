@@ -49,9 +49,17 @@
     {% endfor %}
   </div>
 
+  <h2>admin users</h2>
   <div id="admins">
     {% for admin_user in admin_users %}
     <a href="#">{{admin_user.admin_user}}</a>
+    {% endfor %}
+  </div>
+
+  <h2>freezing chatting</h2>
+  <div id="is_freeze">
+    {% for is_freeze in is_freeze %}
+    <a href="#">{{is_freeze.is_freeze}}</a>
     {% endfor %}
   </div>
 

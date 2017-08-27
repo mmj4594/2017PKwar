@@ -15,3 +15,6 @@ class AdminUser(models.Model):
     admin_user = models.TextField()
     def __str__(self):
         return str(self.admin_user)
+
+class Freeze(models.Model):
+    is_freeze = models.BooleanField()
