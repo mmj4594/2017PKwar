@@ -568,14 +568,14 @@ a img{
 }
 
 .science-war-match-postech-win.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/postech.png') center / cover;
 }
 
 .science-war-match-kaist-win.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/kaist.png') center / cover;
 }
 
@@ -600,8 +600,8 @@ a img{
 }
 
 .science-war-event-card__soccer.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/soccer.png') center / cover;
 }
 
@@ -613,8 +613,8 @@ a img{
 }
 
 .science-war-event-card__basketball.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/basketball.png') center / cover;
 }
 
@@ -626,8 +626,8 @@ a img{
 }
 
 .science-war-event-card__baseball.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/baseball.png') center / cover;
 }
 
@@ -639,8 +639,8 @@ a img{
 }
 
 .science-war-event-card__esports.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/esports.png') center / cover;
 }
 
@@ -652,8 +652,8 @@ a img{
 }
 
 .science-war-event-card__quiz.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/quiz.png') center / cover;
 }
 
@@ -665,8 +665,8 @@ a img{
 }
 
 .science-war-event-card__hacking.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/hacking.png') center / cover;
 }
 
@@ -678,8 +678,8 @@ a img{
 }
 
 .science-war-event-card__ai.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/ai.png') center / cover;
 }
 
@@ -691,8 +691,8 @@ a img{
 }
 
 .science-war-event-card__badminton.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../images/badminton.png') center / cover;
 }
 
@@ -701,148 +701,6 @@ a img{
   padding: 10px;
   background: rgba(240, 155, 154, 0.8);
   text-align: center;
-}
-
-@media (max-width: 350px) {
-  .science-war-match-postech-win.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/postech.png') center / cover;
-  }
-
-  .science-war-match-kaist-win.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/kaist.png') center / cover;
-  }
-
-  .science-war-match-postech-win > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(200, 1, 80, 0.8);
-    text-align: center;
-  }
-
-  .science-war-match-kaist-win > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(20, 135, 200, 0.8);
-    text-align: center;
-  }
-
-  .science-war-card-image__year {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .science-war-event-card__soccer.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/soccer.png') center / cover;
-  }
-
-  .science-war-event-card__soccer > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(0, 176, 54, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__basketball.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/basketball.png') center / cover;
-  }
-
-  .science-war-event-card__basketball > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(249, 134, 41, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__baseball.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/baseball.png') center / cover;
-  }
-
-  .science-war-event-card__baseball > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(128, 168, 104, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__esports.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/esports.png') center / cover;
-  }
-
-  .science-war-event-card__esports > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(86, 128, 62, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__quiz.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/quiz.png') center / cover;
-  }
-
-  .science-war-event-card__quiz > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(51, 117, 178, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__hacking.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/hacking.png') center / cover;
-  }
-
-  .science-war-event-card__hacking > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(61, 61, 61, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__ai.mdl-card {
-    width: 150px;
-    height: 150px;
-    background: url('../images/ai.png') center / cover;
-  }
-
-  .science-war-event-card__ai > .mdl-card__actions {
-    height: 40px;
-    padding: 10px;
-    background: rgba(235, 207, 253, 0.8);
-    text-align: center;
-  }
-
-  .science-war-event-card__badminton.mdl-card {
-    width: 120px;
-    height: 120px;
-    background: url('../images/badminton.png') center / cover;
-  }
-
-  .science-war-event-card__badminton > .mdl-card__actions {
-    height: 30px;
-    padding: 8px;
-    background: rgba(240, 155, 154, 0.8);
-    text-align: center;
-  }
-
-  .mdl-card {
-    min-width: 120px;
-  }
 }
 
 .science-war-card-image__event {
