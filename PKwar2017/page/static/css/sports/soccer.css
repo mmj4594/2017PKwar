@@ -503,7 +503,7 @@ a img{
   .science-war-mobile-title {
     display: block !important;
     position: absolute;
-    left: 70px;
+    left: 50px;
     top: 0px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -568,26 +568,26 @@ a img{
 }
 
 .science-war-match-postech-win.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../../images/postech.png') center / cover;
 }
 
 .science-war-match-kaist-win.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../../images/kaist.png') center / cover;
 }
 
 .science-war-match-postech-win > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
+  height: 40px;
+  padding: 10px;
   background: rgba(200, 1, 80, 0.8);
 }
 
 .science-war-match-kaist-win > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
+  height: 40px;
+  padding: 10px;
   background: rgba(20, 135, 200, 0.8);
 }
 
@@ -598,14 +598,14 @@ a img{
 }
 
 .science-war-player-card.mdl-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  padding-bottom: 100%;
   background: url('../../images/soccer-player.png') center / cover;
 }
 
 .science-war-player-card > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
+  height: 40px;
+  padding: 10px;
   background: rgba(0, 176, 54, 0.8);
 }
 
@@ -627,6 +627,15 @@ a img{
   padding-bottom: 100%
 }
 
+.science-war-event-text {
+  text-align: justify;
+}
+
 .mdl-card {
-  min-height: 150px;
+  min-height: 100px;
+}
+
+#map_canvas {
+  width: 100%;
+  padding-top: 100%;
 }

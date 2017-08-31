@@ -15,7 +15,7 @@ table{
 }
 
 td{
-  width: 33%;
+  max-width: 33%;
 }
 
 .input_site{
@@ -46,5 +46,5 @@ td>p {
 
 p{
   font-size: 10pt;
-  overflow-wrap: break-word;
+  word-break: break-all;
 }

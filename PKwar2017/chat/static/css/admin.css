@@ -44,5 +44,5 @@ td>p {
 
 p{
   font-size: 10pt;
-  overflow-wrap: break-word;
+  word-break: break-all;
 }

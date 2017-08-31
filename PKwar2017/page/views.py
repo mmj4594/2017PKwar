@@ -14,6 +14,8 @@ def sports(request):
     return render(request, "page/sports.html")
 def soccer(request):
     return render(request, "page/sports/soccer.html")
+def basketball(request):
+    return render(request, "page/sports/basketball.html")
 def cyber(request):
     return render(request, "page/cyber.html")
 def starcraft(request):
@@ -22,5 +24,7 @@ def map(request):
     return render(request, "page/map.html")
 def supporters(request):
     return render(request, "page/supporters.html")
+def schedule(request):
+    return render(request, "page/schedule.html")
 def poapper(request):
     return render(request, "page/poapper.html")
