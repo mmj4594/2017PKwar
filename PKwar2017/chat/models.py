@@ -18,3 +18,9 @@ class AdminUser(models.Model):
 
 class Freeze(models.Model):
     is_freeze = models.BooleanField()
+
+
+class WhichVideo(models.Model):
+    which_video = models.TextField()
+    def __str__(self):
+        return self.which_video

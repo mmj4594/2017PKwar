@@ -1,3 +1,8 @@
+.{
+  margin: 0;
+  padding: 0;
+}
+
 table{
   width: 100%;
 }
@@ -14,9 +19,11 @@ table{
   background-color: #DDDDFF;
 }
 
-td{
-  max-width: 33%;
+#POSTECH, #KAIST{
+  display: inline-block;
+  width: 33%;
 }
+
 
 .input_site{
   margin: auto;
@@ -26,12 +33,8 @@ td{
   width: 100%
 }
 
-td{
-  height: 300px;
-}
 
-td>p {
-  text-align: center;
+p {
   font-size: 8pt;
 }
 
@@ -44,7 +47,13 @@ td>p {
   display: none;
 }
 
+div{
+  wkdth: 100%;
+}
+
 p{
+  width: 100%;
   font-size: 10pt;
+  overflow-wrap: break-word;
   word-break: break-all;
 }

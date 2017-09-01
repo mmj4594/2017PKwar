@@ -1,16 +1,18 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, Http404
-from .models import BannedWord, BannedUser, AdminUser, Freeze
+from .models import BannedWord, BannedUser, AdminUser, Freeze, WhichVideo
 
 
 def index(request):
     banned_words = BannedWord.objects.all()
     banned_users = BannedUser.objects.all()
     is_freeze = Freeze.objects.all()
+    which_video = WhichVideo.objects.all()
     context = {
     'banned_words': banned_words,
     'banned_users': banned_users,
     'is_freeze': is_freeze,
+    'which_video': which_video
     }
     return render(request, "chat/index.html", context)
 

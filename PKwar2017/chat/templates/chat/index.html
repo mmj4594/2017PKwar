@@ -5,35 +5,36 @@
   <title>Chat</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="{% static 'css/chatroom.css' %}">
-  <script src="{% static 'js/jquery-3.2.1.min.js' %}">
-
-  </script>
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
 </head>
+
 <body onload="checkCookie()">
-  <table>
-    <tr>
-      <td id="POSTECH">
-        <div id = "P_chat"> </div>
-        <div class="input_site">
-          <input type="text" name="nickname" placeholder = "닉네임" id="p_nickname">
-          <input type="text" name="content" placeholder = "입력하세요" id="p_input" onkeypress="handle(event, 'P')"/>
-          <input type="button" name="button" value="입력" onclick="sendChat1();"/>
-        </div>
-      </td>
-      <td>
-        <!--<p>영상이 들어갈 자리 </p>-->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vIlm90G9-Ik" frameborder="0" allowfullscreen></iframe>
-      </td>
-      <td id="KAIST">
-        <div id = "K_chat"> </div>
-        <div class="input_site">
-          <input type="text" name="nickname" placeholder = "닉네임" id="k_nickname">
-          <input type="text" name="content" placeholder="입력하세요" id="k_input" onkeypress="handle(event, 'K')"/>
-          <input type="button" name="button" value="입력" onclick="sendChat2();"/>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <!--<p>영상이 들어갈 자리 </p>-->
+  {% for which_video in which_video %}
+  <iframe width="560" height="315" src="{{which_video.which_video}}" frameborder="0" allowfullscreen></iframe>
+  {% endfor %}
+
+  <div id="POSTECH">
+    <div id = "P_chat"> </div>
+    <div class="input_site">
+      <input type="text" name="nickname" maxlength="8" placeholder = "닉네임" id="p_nickname">
+      <input type="text" name="content" maxlength="100" placeholder = "입력하세요" id="p_input" onkeypress="handle(event, 'P')"/>
+      <input type="button" name="button" value="입력" onclick="sendChat1();"/>
+    </div>
+  </div>
+
+  <div id="KAIST">
+    <div id = "K_chat"> </div>
+    <div class="input_site">
+      <input type="text" name="nickname" maxlength="8" placeholder = "닉네임" id="k_nickname">
+      <input type="text" name="content" maxlength="100" placeholder="입력하세요" id="k_input" onkeypress="handle(event, 'K')"/>
+      <input type="button" name="button" value="입력" onclick="sendChat2();"/>
+    </div>
+  </div>
+
+
+
+
 
 
   <div id="banned_words">
