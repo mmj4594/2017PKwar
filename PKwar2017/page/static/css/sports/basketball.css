@@ -634,3 +634,20 @@ a img{
 .mdl-card {
   min-height: 100px;
 }
+
+.science-war-icon {
+  background: url('../../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../../images/pbs_logo.png') center/cover;
+}
+
+#map_canvas {
+  width: 100%;
+  padding-top: 100%;
+}

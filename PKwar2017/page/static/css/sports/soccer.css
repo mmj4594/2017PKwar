@@ -606,7 +606,7 @@ a img{
 .science-war-player-card > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(0, 176, 54, 0.8);
+  background: rgba(84, 130, 53, 0.8);
 }
 
 .science-war-card-image__player {
@@ -616,9 +616,9 @@ a img{
 }
 
 .science-war-player-captain-image {
-  width: 300px;
-  height: 300px;
-  background: url('../../images/soccer-player.png') center / cover;
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/soccer-captain.jpg') center / cover;
 }
 
 .mdl-cell--4-col-phone > .science-war-player-captain-image {
@@ -633,6 +633,18 @@ a img{
 
 .mdl-card {
   min-height: 100px;
+}
+
+.science-war-icon {
+  background: url('../../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../../images/pbs_logo.png') center/cover;
 }
 
 #map_canvas {
