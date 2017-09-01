@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^sports/soccer/$', views.soccer),
     url(r'^sports/basketball/$', views.basketball),
     url(r'^sports/baseball/$', views.baseball),
+    url(r'^esports/$', views.esports),
+    url(r'^quiz/$', views.quiz),
     url(r'^cyber/$', views.cyber),
     url(r'^cyber/starcraft/$', views.starcraft),
     url(r'^map/$', views.map),

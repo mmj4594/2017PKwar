@@ -16,6 +16,10 @@ def basketball(request):
     return render(request, "page/sports/basketball.html")
 def baseball(request):
     return render(request, "page/sports/baseball.html")
+def esports(request):
+    return render(request, "page/esports.html")
+def quiz(request):
+    return render(request, "page/quiz.html")
 def cyber(request):
     return render(request, "page/cyber.html")
 def starcraft(request):
@@ -28,6 +32,7 @@ def schedule(request):
     return render(request, "page/schedule.html")
 def poapper(request):
     return render(request, "page/poapper.html")
+
 
 
 def error404(request):
