@@ -18,7 +18,7 @@ body {
   margin: 0;
 }
 
-/* Disable ugly boxes around images/ in IE10 */
+/* Disable ugly boxes around images in IE10 */
 a img{
   border: 0px;
 }

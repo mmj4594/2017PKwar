@@ -383,6 +383,20 @@ a img{
   padding: 80px 16px 0 16px;
 }
 
+.science-war-supporters-section-stuff {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+.science-war-supporters-section-event {
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
   .science-war-supporters-section-text p {
     padding-top: 16px;
   }
@@ -478,6 +492,22 @@ a img{
   cursor: pointer;
 }
 
+.balanced-paragraph {
+  text-align: justify;
+}
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
+}
+
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
@@ -492,7 +522,7 @@ a img{
   .science-war-mobile-title {
     display: block !important;
     position: absolute;
-    left: calc(50% - 70px);
+    left: 50px;
     top: 12px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -554,4 +584,77 @@ a img{
   .science-war-footer .mdl-mega-footer--bottom-section {
     display: none;
   }
+}
+
+.science-war-supporters-stuff {
+  position: relative;
+  width: 100%;
+}
+
+.science-war-supporters-stuff__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.science-war-supporters-stuff > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(200, 1, 80, 0.8);
+}
+
+.science-war-supporters-stuff__name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.science-war-player-card.mdl-card {
+  width: 100%;
+  padding-bottom: 100%;
+  background: url('../images/esports-player.png') center / cover;
+}
+
+.science-war-player-card > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(90, 90, 90, 0.8);
+}
+
+.science-war-card-image__player {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.science-war-player-captain-image {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/esports-captain.jpg') center / cover;
+}
+
+.mdl-cell--4-col-phone > .science-war-player-captain-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%
+}
+
+.science-war-event-text {
+  text-align: justify;
+}
+
+.mdl-card {
+  min-height: 100px;
+}
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
 }

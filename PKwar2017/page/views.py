@@ -17,9 +17,9 @@ def basketball(request):
 def baseball(request):
     return render(request, "page/sports/baseball.html")
 def esports(request):
-    return render(request, "page/esports.html")
+    return render(request, "page/sports/esports.html")
 def quiz(request):
-    return render(request, "page/quiz.html")
+    return render(request, "page/sports/quiz.html")
 def cyber(request):
     return render(request, "page/cyber.html")
 def starcraft(request):
