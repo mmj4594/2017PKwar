@@ -37,3 +37,5 @@ def poapper(request):
 
 def error404(request):
     return render(request, "page/404.html")
+def error500(request):
+    return render(request, "page/500.html")

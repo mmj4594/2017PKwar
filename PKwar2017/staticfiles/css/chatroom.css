@@ -1,0 +1,59 @@
+.{
+  margin: 0;
+  padding: 0;
+}
+
+table{
+  width: 100%;
+}
+
+.input_site{
+  width: 100%;
+}
+
+#POSTECH{
+  background-color: #FFDDDD;
+}
+
+#KAIST{
+  background-color: #DDDDFF;
+}
+
+#POSTECH, #KAIST{
+  display: inline-block;
+  width: 33%;
+}
+
+
+.input_site{
+  margin: auto;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+  width: 100%
+}
+
+
+p {
+  font-size: 8pt;
+}
+
+#P_chat, #K_chat{
+  height: 250px;
+  overflow: scroll;
+}
+
+#banned_words, #banned_users, #is_freeze{
+  display: none;
+}
+
+div{
+  wkdth: 100%;
+}
+
+p{
+  width: 100%;
+  font-size: 10pt;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}

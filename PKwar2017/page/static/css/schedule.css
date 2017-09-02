@@ -811,3 +811,15 @@ a img{
   font-size: 18px;
   padding: 1px;
 }
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
+}

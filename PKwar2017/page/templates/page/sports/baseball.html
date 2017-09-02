@@ -356,20 +356,20 @@
 
     var buildingLatlng= new google.maps.LatLng(36.373505, 127.361628);
 
-    var myOptions = {
-        zoom: 15,
-        center: centerLating
-    };
+    var myOptions = {
+      zoom: 15,
+      center: centerLating
+    };
 
     var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">야구<p>카이스트 학부운동장<br>오전 10:00 ~ 오후 1:00</p></div>';
 
     var infowindow = new google.maps.InfoWindow({content: contentString});
 
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     var marker = new google.maps.Marker({
-        position: buildingLatlng,
-        map: map,
-        title:"카이스트 학부운동장"
+      position: buildingLatlng,
+      map: map,
+      title:"카이스트 학부운동장"
     });
     marker.addListener('click', function() {
       infowindow.open(map, marker);
