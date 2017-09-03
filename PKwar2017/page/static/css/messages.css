@@ -377,11 +377,22 @@ a img{
   }
 
 .science-war-supporters-section {
-  text-align: left;
+  text-align: center;
+}
+
+.science-war-text {
+  text-align: justify;
 }
 
 .science-war-supporters-section-text {
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+.science-war-supporters-section-image-text {
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 80px 16px 0 16px;
@@ -701,4 +712,16 @@ a img{
 
 .mdl-card {
   min-height: 100px;
+}
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
 }

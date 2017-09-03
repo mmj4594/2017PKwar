@@ -8,10 +8,643 @@
 {% block content %}
     <div class="science-war-content mdl-layout__content">
       <a name="top"></a>
-      <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast" style="text-align:center">카이스트 지도</div>
-      <img src="images/poka_map.png" style="max-width:100%; height:auto;">
+      <div class="science-war-be-together-section mdl-typography--text-center">
+        <div class="logo-font android-slogan"><!--포스텍카이스트학생대제전--></div>
+        <div class="logo-font android-sub-slogan"><!--POSTECH-KAIST Science War--></div>
+      </div>
+      <div class="science-war-supporters-section">
+        <div class="science-war-supporters-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">전체지도</div>
+          <img src="{% static 'images/map.png' %}" width="100%" height="auto">
+          <div class="mdl-card__actions">
+            <a data-toggle="modal" href="{% static 'images/map.png' %}" class="science-war-link mdl-button mdl-js-button mdl-typography--text-uppercase">
+              지도 자세히 보기
+              <i class="material-icons">chevron_right</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="science-war-supporters-section">
+        <div class="science-war-supporters-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">경기 장소</div>
+          <div class="science-war-card-container mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+              <div class="science-war-event-card__soccer mdl-card mdl-shadow--3dp" onclick="location.href='#soccer-location'" id="soccer-location-btn">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">축구</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+              <div class="science-war-event-card__basketball mdl-card mdl-shadow--3dp" onclick="location.href='#basketball-location'" id="basketball-location-btn">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">농구</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+              <div class="science-war-event-card__baseball mdl-card mdl-shadow--3dp" onclick="location.href='#baseball-location'" id="baseball-location-btn">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">야구</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" onclick="location.href='#esports-location'" id="esports-location-btn">
+              <div class="science-war-event-card__esports mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">E-Sports</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" onclick="location.href='#quiz-location'" id="quiz-location-btn">
+              <div class="science-war-event-card__quiz mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">과학퀴즈</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" onclick="location.href='#hacking-location'" id="hacking-location-btn">
+              <div class="science-war-event-card__hacking mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">해킹</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" onclick="location.href='#ai-location'" id="ai-location-btn">
+              <div class="science-war-event-card__ai mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">A.I.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" onclick="location.href='#badminton-location'" id="badminton-location-btn">
+              <div class="science-war-event-card__badminton mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__actions">
+                  <span class="science-war-card-image__event">배드민턴</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="soccer-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/big_playground.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="basketball-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/sports_complex.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="baseball-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/playground.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="esports-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/theater.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="quiz-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/sports_complex.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="hacking-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/map.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="ai-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/theater.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="badminton-location" role="dialog">
+        <div class="modal-content mdl-card mdl-shadow--3dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img src="{% static 'images/sports_complex.png' %}" width="100%" height="auto" class="modal-box">
+            <div class="map_canvas"></div>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-change-map">
+              <span class="material-icons">map</span>
+            </button>
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-custom-close modal-cancel">
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
 {% endblock %}
 
 {% block script %}
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxVLZtAE6N0fpOa7JIN5b3AHaxV49fMKo"></script>
+  <script type="text/javascript">
+  window.onload = function() {
+    var soccer_modal = document.getElementById("soccer-location");
+    var soccer_btn = document.getElementById("soccer-location-btn");
+    var soccer_map_btn = document.getElementsByClassName("modal-change-map")[0];
+    var soccer_img = document.getElementsByClassName("modal-box")[0];
+    var soccer_g_map = document.getElementsByClassName("map_canvas")[0];
+    var soccer_close = document.getElementsByClassName("modal-cancel")[0];
+
+    var basketball_modal = document.getElementById("basketball-location");
+    var basketball_btn = document.getElementById("basketball-location-btn");
+    var basketball_map_btn = document.getElementsByClassName("modal-change-map")[1];
+    var basketball_img = document.getElementsByClassName("modal-box")[1];
+    var basketball_g_map = document.getElementsByClassName("map_canvas")[1];
+    var basketball_close = document.getElementsByClassName("modal-cancel")[1];
+
+    var baseball_modal = document.getElementById("baseball-location");
+    var baseball_btn = document.getElementById("baseball-location-btn");
+    var baseball_map_btn = document.getElementsByClassName("modal-change-map")[2];
+    var baseball_img = document.getElementsByClassName("modal-box")[2];
+    var baseball_g_map = document.getElementsByClassName("map_canvas")[2];
+    var baseball_close = document.getElementsByClassName("modal-cancel")[2];
+
+    var esports_modal = document.getElementById("esports-location");
+    var esports_btn = document.getElementById("esports-location-btn");
+    var esports_map_btn = document.getElementsByClassName("modal-change-map")[3];
+    var esports_img = document.getElementsByClassName("modal-box")[3];
+    var esports_g_map = document.getElementsByClassName("map_canvas")[3];
+    var esports_close = document.getElementsByClassName("modal-cancel")[3];
+
+    var quiz_modal = document.getElementById("quiz-location");
+    var quiz_btn = document.getElementById("quiz-location-btn");
+    var quiz_map_btn = document.getElementsByClassName("modal-change-map")[4];
+    var quiz_img = document.getElementsByClassName("modal-box")[4];
+    var quiz_g_map = document.getElementsByClassName("map_canvas")[4];
+    var quiz_close = document.getElementsByClassName("modal-cancel")[4];
+
+    var hacking_modal = document.getElementById("hacking-location");
+    var hacking_btn = document.getElementById("hacking-location-btn");
+    var hacking_map_btn = document.getElementsByClassName("modal-change-map")[5];
+    var hacking_img = document.getElementsByClassName("modal-box")[5];
+    var hacking_g_map = document.getElementsByClassName("map_canvas")[5];
+    var hacking_close = document.getElementsByClassName("modal-cancel")[5];
+
+    var ai_modal = document.getElementById("ai-location");
+    var ai_btn = document.getElementById("ai-location-btn");
+    var ai_map_btn = document.getElementsByClassName("modal-change-map")[6];
+    var ai_img = document.getElementsByClassName("modal-box")[6];
+    var ai_g_map = document.getElementsByClassName("map_canvas")[6];
+    var ai_close = document.getElementsByClassName("modal-cancel")[6];
+
+    var badminton_modal = document.getElementById("badminton-location");
+    var badminton_btn = document.getElementById("badminton-location-btn");
+    var badminton_map_btn = document.getElementsByClassName("modal-change-map")[7];
+    var badminton_img = document.getElementsByClassName("modal-box")[7];
+    var badminton_g_map = document.getElementsByClassName("map_canvas")[7];
+    var badminton_close = document.getElementsByClassName("modal-cancel")[7];
+
+    soccer_btn.onclick = function() {
+      'use strict';
+      soccer_modal.style.display = "block";
+    }
+
+    soccer_map_btn.onclick = function() {
+      'use strict';
+      soccer_img.style.display = "none";
+      soccer_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.369597,127.368465);
+
+        var buildingLatlng= new google.maps.LatLng(36.369597,127.368465);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">축구<p>카이스트 원운동장<br>오후 3:30 ~ 오후 6:00</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(soccer_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트 원운동장"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    soccer_close.onclick = function() {
+      'use strict';
+      soccer_img.style.display = "block";
+      soccer_g_map.style.display = "none";
+      soccer_modal.style.display = "none";
+    }
+
+    basketball_btn.onclick = function() {
+      'use strict';
+      basketball_modal.style.display = "block";
+    }
+
+    basketball_map_btn.onclick = function() {
+      'use strict';
+      basketball_img.style.display = "none";
+      basketball_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.372402,127.361610);
+
+        var buildingLatlng= new google.maps.LatLng(36.372402,127.361610);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">농구<p>카이스트 스포츠컴플렉스<br>오후 5:00 ~ 오후 7:00</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(basketball_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트 스포츠컴플렉스"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    basketball_close.onclick = function() {
+      'use strict';
+      basketball_img.style.display = "block";
+      basketball_g_map.style.display = "none";
+      basketball_modal.style.display = "none";
+    }
+
+    baseball_btn.onclick = function() {
+      'use strict';
+      baseball_modal.style.display = "block";
+    }
+
+    baseball_map_btn.onclick = function() {
+      'use strict';
+      baseball_img.style.display = "none";
+      baseball_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.372306, 127.360375);
+
+        var buildingLatlng= new google.maps.LatLng(36.372306, 127.360375);
+
+        var myOptions = {
+          zoom: 15,
+          center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">야구<p>카이스트 학부운동장<br>오전 10:00 ~ 오후 1:00</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(baseball_g_map, myOptions);
+        var marker = new google.maps.Marker({
+          position: buildingLatlng,
+          map: map,
+          title:"카이스트 학부운동장"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    baseball_close.onclick = function() {
+      'use strict';
+      baseball_img.style.display = "block";
+      baseball_g_map.style.display = "none";
+      baseball_modal.style.display = "none";
+    }
+
+    esports_btn.onclick = function() {
+      'use strict';
+      esports_modal.style.display = "block";
+    }
+
+    esports_map_btn.onclick = function() {
+      'use strict';
+      esports_img.style.display = "none";
+      esports_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.370989, 127.357952);
+
+        var buildingLatlng= new google.maps.LatLng(36.370989, 127.357952);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">E-sports<p>카이스트 노천극장<br>오후 8:00 ~ 오후 9:00</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(esports_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트 노천극장"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    esports_close.onclick = function() {
+      'use strict';
+      esports_img.style.display = "block";
+      esports_g_map.style.display = "none";
+      esports_modal.style.display = "none";
+    }
+
+    quiz_btn.onclick = function() {
+      'use strict';
+      quiz_modal.style.display = "block";
+    }
+
+    quiz_map_btn.onclick = function() {
+      'use strict';
+      quiz_img.style.display = "none";
+      quiz_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.372402,127.361610);
+
+        var buildingLatlng= new google.maps.LatLng(36.372402,127.361610);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">과학퀴즈<p>카이스트 스포츠컴플렉스<br>오후 2:00 ~ 오후 3:30</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(quiz_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트 스포츠컴플렉스"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    quiz_close.onclick = function() {
+      'use strict';
+      quiz_img.style.display = "block";
+      quiz_g_map.style.display = "none";
+      quiz_modal.style.display = "none";
+    }
+
+    hacking_btn.onclick = function() {
+      'use strict';
+      hacking_modal.style.display = "block";
+    }
+
+    hacking_map_btn.onclick = function() {
+      'use strict';
+      hacking_img.style.display = "none";
+      hacking_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.369383, 127.364025);
+
+        var buildingLatlng= new google.maps.LatLng(36.369383, 127.364025);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">해킹<p>KAIST<br>오후 9:00 ~ 다음 날 오전 9:00</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(hacking_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    hacking_close.onclick = function() {
+      'use strict';
+      hacking_img.style.display = "block";
+      hacking_g_map.style.display = "none";
+      hacking_modal.style.display = "none";
+    }
+
+    ai_btn.onclick = function() {
+      'use strict';
+      ai_modal.style.display = "block";
+    }
+
+    ai_map_btn.onclick = function() {
+      'use strict';
+      ai_img.style.display = "none";
+      ai_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.370989, 127.357952);
+
+        var buildingLatlng= new google.maps.LatLng(36.370989, 127.357952);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">A.I.<p>카이스트 노천극장<br>오후 7:00 ~ 오후 8:00</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(ai_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트 노천극장"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    ai_close.onclick = function() {
+      'use strict';
+      ai_img.style.display = "block";
+      ai_g_map.style.display = "none";
+      ai_modal.style.display = "none";
+    }
+
+    badminton_btn.onclick = function() {
+      'use strict';
+      badminton_modal.style.display = "block";
+    }
+
+    badminton_map_btn.onclick = function() {
+      'use strict';
+      badminton_img.style.display = "none";
+      badminton_g_map.style.display = "block";
+      function initialize() {
+        var centerLating = new google.maps.LatLng(36.372402,127.361610);
+
+        var buildingLatlng= new google.maps.LatLng(36.372402,127.361610);
+
+        var myOptions = {
+            zoom: 15,
+            center: centerLating
+        };
+
+        var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">배드민턴<p>카이스트 스포츠컴플렉스<br>오후 3:30 ~ 오후 4:30</p></div>';
+
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+
+        var map = new google.maps.Map(badminton_g_map, myOptions);
+        var marker = new google.maps.Marker({
+            position: buildingLatlng,
+            map: map,
+            title:"카이스트 스포츠컴플렉스"
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      document.getElementsByTagName("body").onload = initialize();
+    }
+
+    badminton_close.onclick = function() {
+      'use strict';
+      badminton_img.style.display = "block";
+      badminton_g_map.style.display = "none";
+      badminton_modal.style.display = "none";
+    }
+  };
+  </script>
 {% endblock %}

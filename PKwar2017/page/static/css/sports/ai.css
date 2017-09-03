@@ -175,7 +175,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('../images/ponix.png') center 30% no-repeat;
+  background: url('../../images/ponix.png') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -306,14 +306,14 @@ a img{
 
 .science-war-cyber-section {
   position: relative;
-  background: url('../images/cyber.jpg') center top no-repeat;
+  background: url('../../images/cyber.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
 
 .science-war-puzzle-section {
   position: relative;
-  background: url('../images/puzzle.jpg') center top no-repeat;
+  background: url('../../images/puzzle.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -381,7 +381,7 @@ a img{
 }
 
 .science-war-supporters-section-text {
-  max-width: 1044px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   padding: 80px 16px 0 16px;
@@ -392,7 +392,7 @@ a img{
   }
 
 .science-war-supporters-section-image {
-  background: url('../images/devices.jpg') center top no-repeat;
+  background: url('../../images/devices.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -431,7 +431,6 @@ a img{
   .science-war-card-container .mdl-card__title {
     background: transparent;
     height: auto;
-    margin: auto;
   }
 
   .science-war-card-container .mdl-card__title-text {
@@ -504,7 +503,7 @@ a img{
   .science-war-mobile-title {
     display: block !important;
     position: absolute;
-    left: 70px;
+    left: 50px;
     top: 0px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -568,169 +567,40 @@ a img{
   }
 }
 
-.science-war-match-postech-win {
+.science-war-match-postech-win.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../images/postech.png') center / cover;
-}
-
-.science-war-match-two-three {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(200, 1, 80, 0.8);
-}
-
-.science-war-match-two-three:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.science-war-match-two-two {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(164, 28, 104, 0.8);
-}
-
-.science-war-match-two-two:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.science-war-match-two-one {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(128, 55, 128, 0.8);
-}
-
-.science-war-match-two-one:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.science-war-match-two-zero {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(92, 81, 152, 0.8);
-}
-
-.science-war-match-two-zero:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.science-war-match-one-nine {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(56, 108, 176, 0.8);
-}
-
-.science-war-match-one-nine:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.science-war-match-one-eight {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(20, 135, 200, 0.8);
-}
-
-.science-war-match-one-eight:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
+  background: url('../../images/postech.png') center / cover;
 }
 
 .science-war-match-kaist-win.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../images/kaist.png') center / cover;
+  background: url('../../images/kaist.png') center / cover;
 }
 
-
-
-@media (max-width: 840px) {
-  .science-war-match-two-three:before {
-    content: "";
-    display: block;
-    padding-top: 20%;
-  }
-
-  .science-war-match-two-two:before {
-    content: "";
-    display: block;
-    padding-top: 20%;
-  }
-
-  .science-war-match-two-one:before {
-    content: "";
-    display: block;
-    padding-top: 20%;
-  }
-
-  .science-war-match-two-zero:before {
-    content: "";
-    display: block;
-    padding-top: 20%;
-  }
-
-  .science-war-match-one-nine:before {
-    content: "";
-    display: block;
-    padding-top: 20%;
-  }
-
-  .science-war-match-one-eight:before {
-    content: "";
-    display: block;
-    padding-top: 20%;
-  }
-}
-
-.science-war-result-score-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: white;
-}
-
-.science-war-result-score-text div {
-  display: table;
+.science-war-match-poka-draw.mdl-card {
   width: 100%;
-  height: 100%;
-  font-size: 64px;
-}
-
-.science-war-result-score-text span {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  color: white;
+  padding-top: 100%;
+  background: url('../../images/poka.jpg') center / cover;
 }
 
 .science-war-match-postech-win > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
+  height: 40px;
+  padding: 10px;
   background: rgba(200, 1, 80, 0.8);
 }
 
 .science-war-match-kaist-win > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
+  height: 40px;
+  padding: 10px;
   background: rgba(20, 135, 200, 0.8);
+}
+
+.science-war-match-poka-draw > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(110, 68, 140, 0.8);
 }
 
 .science-war-card-image__year {
@@ -740,15 +610,15 @@ a img{
 }
 
 .science-war-player-card.mdl-card {
-  width: 150px;
-  height: 150px;
-  background: url('../images/soccer-player.png') center / cover;
+  width: 100%;
+  padding-bottom: 100%;
+  background: url('../../images/ai-player.png') center / cover;
 }
 
 .science-war-player-card > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
-  background: rgba(0, 176, 54, 0.8);
+  height: 40px;
+  padding: 10px;
+  background: rgba(55, 66, 81, 0.8);
 }
 
 .science-war-card-image__player {
@@ -758,9 +628,9 @@ a img{
 }
 
 .science-war-player-captain-image {
-  width: 300px;
-  height: 300px;
-  background: url('../images/soccer-player.png') center / cover;
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/AI-captain.png') center / cover;
 }
 
 .mdl-cell--4-col-phone > .science-war-player-captain-image {
@@ -769,135 +639,27 @@ a img{
   padding-bottom: 100%
 }
 
-.mdl-card {
-  min-height: 150px;
-}
-
-.left-paragraph {
+.science-war-event-text {
   text-align: justify;
-}
-
-.science-war-event-card__starcraft.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/starcraft.png') center / cover;
-}
-
-.science-war-event-card__starcraft > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(128, 128, 128, 0.8);
-  text-align: center;
-}
-
-.science-war-event-card__starcraft2.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/starcraft2.png') center / cover;
-}
-
-.science-war-event-card__starcraft2 > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(31, 78, 121, 0.8);
-  text-align: center;
-}
-
-.science-war-event-card__hearthstone.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/hearthstone.png') center / cover;
-}
-
-.science-war-event-card__hearthstone > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(84, 113, 171, 0.8);
-  text-align: center;
-}
-
-.science-war-event-card__kartrider.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/kartrider.png') center / cover;
-}
-
-.science-war-event-card__kartrider > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(89, 89, 89, 0.8);
-  text-align: center;
-}
-
-.science-war-event-card__heroes_of_the_storm.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/heroes_of_the_storm.png') center / cover;
-}
-
-.science-war-event-card__heroes_of_the_storm > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(73, 124, 170, 0.8);
-  text-align: center;
-}
-
-.science-war-event-card__overwatch.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/overwatch.png') center / cover;
-}
-
-.science-war-event-card__overwatch > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(92, 95, 102, 0.8);
-  text-align: center;
-}
-
-.science-war-card-image__event {
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-@media (max-width: 360px) {
-  .science-war-card-image__event {
-    color: #fff;
-    font-size: 10px;
-    font-weight: 500;
-  }
-}
-
-.science-war-player-captain-image {
-  width: 300px;
-  height: 300px;
-  background: url('../images/soccer.png') center / cover;
-}
-
-.mdl-cell--4-col-phone > .science-war-player-captain-image {
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%
 }
 
 .mdl-card {
   min-height: 100px;
 }
 
-.shrink-title {
-  font-size: 18px;
-  padding: 1px;
-}
-
 .science-war-icon {
-  background: url('../images/logo.png') center/cover;
+  background: url('../../images/logo.png') center/cover;
 }
 
 .poapper-icon {
-  background: url('../images/poapper_logo.png') center/cover;
+  background: url('../../images/poapper_logo.png') center/cover;
 }
 
 .pbs-icon {
-  background: url('../images/pbs_logo.png') center/cover;
+  background: url('../../images/pbs_logo.png') center/cover;
+}
+
+#map_canvas {
+  width: 100%;
+  padding-top: 100%;
 }

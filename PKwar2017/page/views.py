@@ -20,6 +20,12 @@ def esports(request):
     return render(request, "page/sports/esports.html")
 def quiz(request):
     return render(request, "page/sports/quiz.html")
+def ai(request):
+    return render(request, "page/sports/ai.html")
+def badminton(request):
+    return render(request, "page/sports/badminton.html")
+def hacking(request):
+    return render(request, "page/sports/hacking.html")
 def cyber(request):
     return render(request, "page/cyber.html")
 def starcraft(request):
