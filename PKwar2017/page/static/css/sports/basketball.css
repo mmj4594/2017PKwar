@@ -62,8 +62,12 @@ a img{
 
 
 .logo-image {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 200px;
+}
+
+.mdl-layout__drawer-button {
+  color: #222222;
 }
 
 
@@ -156,7 +160,15 @@ a img{
   }
 
   .science-war-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #cyber {
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .science-war-drawer .mdl-layout-title {

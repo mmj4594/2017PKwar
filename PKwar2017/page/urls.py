@@ -13,15 +13,14 @@ urlpatterns = [
     url(r'^sports/esports/$', views.esports),
     url(r'^sports/quiz/$', views.quiz),
     url(r'^sports/ai/$', views.ai),
-    #badminton에서 푸터가 가운데 정렬되어 있음.
     url(r'^sports/badminton/$', views.badminton),
     url(r'^sports/hacking/$', views.hacking),
-    #cyber, starcraft 푸터에 사진 없음.
     url(r'^cyber/$', views.cyber),
-    url(r'^cyber/starcraft/$', views.starcraft),
+    url(r'^cyber/starcraft/$', views.starcraft),    url(r'^cyber/starcraft2/$', views.starcraft2),    url(r'^cyber/kartrider/$', views.kartrider),    url(r'^cyber/overwatch/$', views.overwatch),    url(r'^cyber/heroes_of_the_storm/$', views.heroes_of_the_storm),
+    url(r'^cyber/hearthstone/$', views.hearthstone),
+
     url(r'^map/$', views.map),
     url(r'^supporters/$', views.supporters),
     url(r'^schedule/$', views.schedule),
-    #poapper 푸터에 사진 없음.
     url(r'^poapper/$', views.poapper),
 ]

@@ -10,6 +10,7 @@ def about(request):
     return render(request, "page/about.html")
 def messages(request):
     return render(request, "page/messages.html")
+
 def soccer(request):
     return render(request, "page/sports/soccer.html")
 def basketball(request):
@@ -26,10 +27,22 @@ def badminton(request):
     return render(request, "page/sports/badminton.html")
 def hacking(request):
     return render(request, "page/sports/hacking.html")
+
 def cyber(request):
     return render(request, "page/cyber.html")
 def starcraft(request):
     return render(request, "page/cyber/starcraft.html")
+def starcraft2(request):
+    return render(request, "page/cyber/starcraft2.html")
+def hearthstone(request):
+    return render(request, "page/cyber/hearthstone.html")
+def heroes_of_the_storm(request):
+    return render(request, "page/cyber/heroes_of_the_storm.html")
+def overwatch(request):
+    return render(request, "page/cyber/overwatch.html")
+def kartrider(request):
+    return render(request, "page/cyber/kartrider.html")
+
 def map(request):
     return render(request, "page/map.html")
 def supporters(request):

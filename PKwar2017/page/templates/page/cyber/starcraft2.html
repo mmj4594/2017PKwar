@@ -1,0 +1,100 @@
+{% extends "page/layout.html" %}
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/cyber/starcraft2.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="science-war-content mdl-layout__content">
+      <a name="top"></a>
+
+      <div class="science-war-supporters-section">
+        <div class="science-war-supporters-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">스타크래프트2</div>
+          <p class="left-paragraph mdl-typography--font-light">
+            국민 게임 스타크래프트1의 후속작인 스타크래프트2는 전작의 아성을 이어 가장 인기있는 실시간 전략 게임 자리 중 하나를 차지하고 있습니다.
+            빠른 손놀림과 적과의 심리전, 그리고 뛰어난 순간판단능력을 요구하는 이 게임에서 승자는 누가 될까요?
+          </p>
+          <div class="mdl-card__actions">
+            <a class="science-war-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://kr.blizzard.com/ko-kr/games/sc2/">
+              자세히 알아보기
+              <i class="material-icons">chevron_right</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+        <div class="science-war-supporters-section">
+          <div class="science-war-supporters-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">경기 규칙</div>
+            <p class="left-paragraph mdl-typography--font-light" style="text-align: center">
+              3 vs 3 대결<br>
+              1 대 1 매치를 진행하여 패배자 탈락<br>
+              전원 탈락하는 팀이 패배<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="science-war-supporters-section">
+          <div class="science-war-supporters-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">참가 선수</div>
+            <div class="science-war-card-container mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__actions">
+                    <span class="science-war-card-image__player">가종현 전자15</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__actions">
+                    <span class="science-war-card-image__player">이재욱 화공16</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__actions">
+                    <span class="science-war-card-image__player">황의빈 단일17</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="science-war-supporters-section">
+          <div class="science-war-supporters-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">2016년 경기 결과</div>
+            <div class="science-war-card-container mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="science-war-event-card__starcraft2 mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__actions">
+                    <span class="science-war-card-image__event">스타크래프트2</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                <div class="science-war-match-postech-score mdl-card mdl-shadow--3dp">
+                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>2</span></div></div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                <div class="science-war-match-kaist-score mdl-card mdl-shadow--3dp">
+                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>3</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+{% endblock %}

@@ -514,7 +514,7 @@ a img{
   .science-war-mobile-title {
     display: block !important;
     position: absolute;
-    left: 50px;
+    left: 70px;
     top: 0px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -584,21 +584,84 @@ a img{
   background: url('../../images/postech.png') center / cover;
 }
 
+.science-war-match-postech-score {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(200, 1, 80, 0.8);
+}
+
+.science-war-match-postech-score:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
 .science-war-match-kaist-win.mdl-card {
   width: 100%;
   padding-top: 100%;
   background: url('../../images/kaist.png') center / cover;
 }
 
+.science-war-match-kaist-score {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(20, 135, 200, 0.8);
+}
+
+.science-war-match-kaist-score:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.science-war-result-score-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+}
+
+.science-war-result-score-text div {
+  display: table;
+  width: 100%;
+  height: 100%;
+  font-size: 64px;
+}
+
+.science-war-result-score-text span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+@media (max-width: 840px) {
+  .science-war-match-postech-score:before {
+    content: "";
+    display: block;
+    padding-top: calc(200% + 16px);
+  }
+
+  .science-war-match-kaist-score:before {
+    content: "";
+    display: block;
+    padding-top: calc(200% + 16px);
+  }
+}
+
 .science-war-match-postech-win > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
+  height: 52px;
+  padding: 16px;
   background: rgba(200, 1, 80, 0.8);
 }
 
 .science-war-match-kaist-win > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
+  height: 52px;
+  padding: 16px;
   background: rgba(20, 135, 200, 0.8);
 }
 
@@ -610,14 +673,14 @@ a img{
 
 .science-war-player-card.mdl-card {
   width: 100%;
-  padding-bottom: 100%;
-  background: url('../../images/soccer-player.png') center / cover;
+  padding-top: 100%;
+  background: url('../../images/kartrider.png') center / cover;
 }
 
 .science-war-player-card > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(84, 130, 53, 0.8);
+  background: rgba(89, 89, 89, 0.8);
 }
 
 .science-war-card-image__player {
@@ -626,10 +689,23 @@ a img{
   font-weight: 500;
 }
 
+.science-war-event-card__kartrider.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/kartrider.png') center / cover;
+}
+
+.science-war-event-card__kartrider > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(89, 89, 89, 0.8);
+  text-align: center;
+}
+
 .science-war-player-captain-image {
   width: 100%;
   padding-top: 100%;
-  background: url('../../images/soccer-captain.jpg') center / cover;
+  background: url('../../images/soccer-player.png') center / cover;
 }
 
 .mdl-cell--4-col-phone > .science-war-player-captain-image {
@@ -638,8 +714,140 @@ a img{
   padding-bottom: 100%
 }
 
-.science-war-event-text {
+.science-war-new-game {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/opening.png') center / cover;
+}
+
+.mdl-card {
+  min-height: 150px;
+}
+
+.left-paragraph {
   text-align: justify;
+}
+
+.science-war-event-card__soccer.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/soccer.png') center / cover;
+}
+
+.science-war-event-card__soccer > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(0, 176, 54, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__basketball.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/basketball.png') center / cover;
+}
+
+.science-war-event-card__basketball > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(249, 134, 41, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__baseball.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../../images/baseball.png') center / cover;
+}
+
+.science-war-event-card__baseball > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(128, 168, 104, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__esports.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../../images/esports.png') center / cover;
+}
+
+.science-war-event-card__esports > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(86, 128, 62, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__quiz.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../../images/quiz.png') center / cover;
+}
+
+.science-war-event-card__quiz > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(51, 117, 178, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__hacking.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../../images/hacking.png') center / cover;
+}
+
+.science-war-event-card__hacking > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(61, 61, 61, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__ai.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../../images/ai.png') center / cover;
+}
+
+.science-war-event-card__ai > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(235, 207, 253, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__badminton.mdl-card {
+  width: 150px;
+  height: 150px;
+  background: url('../../images/badminton.png') center / cover;
+}
+
+.science-war-event-card__badminton > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(240, 155, 154, 0.8);
+  text-align: center;
+}
+
+.science-war-card-image__event {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.science-war-player-captain-image {
+  width: 300px;
+  height: 300px;
+  background: url('../../images/soccer.png') center / cover;
+}
+
+.mdl-cell--4-col-phone > .science-war-player-captain-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%
 }
 
 .mdl-card {
@@ -656,9 +864,4 @@ a img{
 
 .pbs-icon {
   background: url('../../images/pbs_logo.png') center/cover;
-}
-
-#map_canvas {
-  width: 100%;
-  padding-top: 100%;
 }

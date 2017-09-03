@@ -62,10 +62,13 @@ a img{
 
 
 .logo-image {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 200px;
 }
 
+.mdl-layout__drawer-button {
+  color: #222222;
+}
 
 .science-war-header {
   overflow: visible;
@@ -156,7 +159,15 @@ a img{
   }
 
   .science-war-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #cyber {
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .science-war-drawer .mdl-layout-title {
@@ -661,15 +672,15 @@ a img{
 }
 
 .science-war-player-card.mdl-card {
-  width: 150px;
-  height: 150px;
-  background: url('../../images/soccer-player.png') center / cover;
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/starcraft.png') center / cover;
 }
 
 .science-war-player-card > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
-  background: rgba(0, 176, 54, 0.8);
+  height: 40px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .science-war-card-image__player {
@@ -679,8 +690,8 @@ a img{
 }
 
 .science-war-player-captain-image {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  padding-top: 100%;
   background: url('../../images/soccer-player.png') center / cover;
 }
 
@@ -688,6 +699,12 @@ a img{
   width: 100%;
   height: 0;
   padding-bottom: 100%
+}
+
+.science-war-new-game {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/opening.png') center / cover;
 }
 
 .mdl-card {
@@ -822,4 +839,16 @@ a img{
 
 .mdl-card {
   min-height: 100px;
+}
+
+.science-war-icon {
+  background: url('../../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../../images/pbs_logo.png') center/cover;
 }
