@@ -62,10 +62,13 @@ a img{
 
 
 .logo-image {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 200px;
 }
 
+.mdl-layout__drawer-button {
+  color: #222222;
+}
 
 .science-war-header {
   overflow: visible;
@@ -156,7 +159,15 @@ a img{
   }
 
   .science-war-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #cyber {
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .science-war-drawer .mdl-layout-title {
@@ -384,14 +395,14 @@ a img{
 }
 
 .science-war-supporters-section-stuff {
-  max-width: 500px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   padding: 80px 16px 0 16px;
 }
 
 .science-war-supporters-section-event {
-  max-width: 1044px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 80px 16px 0 16px;
@@ -402,7 +413,7 @@ a img{
   }
 
 .science-war-supporters-section-image {
-  background: url('../images/devices.jpg') center top no-repeat;
+  background: url('../images/supporters-wallpaper.png') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -523,7 +534,7 @@ a img{
     display: block !important;
     position: absolute;
     left: 50px;
-    top: 12px;
+    top: 0;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -646,6 +657,62 @@ a img{
 .mdl-card {
   min-height: 100px;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal-content {
+  margin-top: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: auto;
+  width: 60%;
+}
+
+@media (min-width: 550px) and (max-width: 840px) {
+  .modal-content {
+    margin-top: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal-content {
+    margin-top: 20%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: auto;
+    width: 95%;
+  }
+}
+
+.modal-content > .mdl-card__actions {
+  background-color: rgba(222, 222, 222, 0.25);
+}
+
+.modal-box {
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+}
+
+.modal-cancel {
+  text-align: center;
+}
+
+
 
 .science-war-icon {
   background: url('../images/logo.png') center/cover;

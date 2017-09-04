@@ -62,10 +62,13 @@ a img{
 
 
 .logo-image {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 200px;
 }
 
+.mdl-layout__drawer-button {
+  color: #222222;
+}
 
 .science-war-header {
   overflow: visible;
@@ -156,7 +159,15 @@ a img{
   }
 
   .science-war-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #cyber {
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .science-war-drawer .mdl-layout-title {
@@ -600,13 +611,13 @@ a img{
 .science-war-player-card.mdl-card {
   width: 100%;
   padding-bottom: 100%;
-  background: url('../../images/basketball-player.png') center / cover;
+  background: url('../../images/quiz-player.png') center / cover;
 }
 
 .science-war-player-card > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(249, 134, 41, 0.8);
+  background: rgba(113, 171, 81, 0.8);
 }
 
 .science-war-card-image__player {
@@ -618,7 +629,7 @@ a img{
 .science-war-player-captain-image {
   width: 100%;
   padding-top: 100%;
-  background: url('../../images/basketball-captain.jpg') center / cover;
+  background: url('../../images/quiz-captain.jpg') center / cover;
 }
 
 .mdl-cell--4-col-phone > .science-war-player-captain-image {

@@ -62,10 +62,17 @@ a img{
 
 
 .logo-image {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 200px;
 }
 
+.mdl-layout__drawer-button {
+  color: #222222;
+}
+
+.mdl-layout__drawer-button {
+  color: #222222;
+}
 
 .science-war-header {
   overflow: visible;
@@ -156,7 +163,15 @@ a img{
   }
 
   .science-war-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #cyber {
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .science-war-drawer .mdl-layout-title {
@@ -299,6 +314,36 @@ a img{
     z-index: 1;
   }
 
+  .android-drawer {
+  border-right: none;
+}
+
+  .science-war-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .android-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .android-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #8bc34a;
+  }
+
+  .android-drawer .mdl-layout-title {
+    position: relative;
+    background: #6ab344;
+    height: 160px;
+  }
+
+    .android-drawer .android-logo-image {
+      position: absolute;
+      bottom: 16px;
+    }
+
 
 .science-war-cyber-section {
   position: relative;
@@ -388,7 +433,7 @@ a img{
   }
 
 .science-war-supporters-section-image {
-  background: url('../images/devices.jpg') center top no-repeat;
+  background: url('../images/supporters-wallpaper.png') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -554,4 +599,16 @@ a img{
   .science-war-footer .mdl-mega-footer--bottom-section {
     display: none;
   }
+}
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
 }

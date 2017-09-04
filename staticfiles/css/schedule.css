@@ -62,10 +62,13 @@ a img{
 
 
 .logo-image {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 200px;
 }
 
+.mdl-layout__drawer-button {
+  color: #222222;
+}
 
 .science-war-header {
   overflow: visible;
@@ -156,7 +159,15 @@ a img{
   }
 
   .science-war-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #cyber {
+    color: #c80150;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   .science-war-drawer .mdl-layout-title {
@@ -574,14 +585,79 @@ a img{
   background: url('../images/postech.png') center / cover;
 }
 
-.science-war-match-postech-score {
+.science-war-match-two-three {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: rgba(200, 1, 80, 0.8);
 }
 
-.science-war-match-postech-score:before {
+.science-war-match-two-three:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.science-war-match-two-two {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(164, 28, 104, 0.8);
+}
+
+.science-war-match-two-two:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.science-war-match-two-one {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(128, 55, 128, 0.8);
+}
+
+.science-war-match-two-one:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.science-war-match-two-zero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(92, 81, 152, 0.8);
+}
+
+.science-war-match-two-zero:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.science-war-match-one-nine {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(56, 108, 176, 0.8);
+}
+
+.science-war-match-one-nine:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.science-war-match-one-eight {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(20, 135, 200, 0.8);
+}
+
+.science-war-match-one-eight:before {
   content: "";
   display: block;
   padding-top: 100%;
@@ -593,27 +669,40 @@ a img{
   background: url('../images/kaist.png') center / cover;
 }
 
-.science-war-match-kaist-score {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(20, 135, 200, 0.8);
-}
 
-.science-war-match-kaist-score:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
 
 @media (max-width: 840px) {
-  .science-war-match-postech-score:before {
+  .science-war-match-two-three:before {
     content: "";
     display: block;
     padding-top: 20%;
   }
 
-  .science-war-match-kaist-score:before {
+  .science-war-match-two-two:before {
+    content: "";
+    display: block;
+    padding-top: 20%;
+  }
+
+  .science-war-match-two-one:before {
+    content: "";
+    display: block;
+    padding-top: 20%;
+  }
+
+  .science-war-match-two-zero:before {
+    content: "";
+    display: block;
+    padding-top: 20%;
+  }
+
+  .science-war-match-one-nine:before {
+    content: "";
+    display: block;
+    padding-top: 20%;
+  }
+
+  .science-war-match-one-eight:before {
     content: "";
     display: block;
     padding-top: 20%;
@@ -810,4 +899,16 @@ a img{
 .shrink-title {
   font-size: 18px;
   padding: 1px;
+}
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
 }
