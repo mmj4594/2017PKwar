@@ -567,6 +567,12 @@ a img{
   }
 }
 
+.science-war-player-captain-image {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../../images/poapper_logo.jpg') center / cover;
+}
+
 .balance-paragraph {
   text-align: justify;
 }
