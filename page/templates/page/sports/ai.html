@@ -198,6 +198,9 @@
         map: map,
         title:"카이스트 노천극장"
     });
+
+    infowindow.open(map, marker);
+    
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });

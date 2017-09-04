@@ -462,6 +462,9 @@
         map: map,
         title:"카이스트 원운동장"
     });
+
+    infowindow.open(map, marker);
+    
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });

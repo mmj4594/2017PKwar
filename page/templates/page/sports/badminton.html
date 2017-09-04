@@ -127,6 +127,9 @@
         map: map,
         title:"카이스트 스포츠컴플렉스"
     });
+
+    infowindow.open(map, marker);
+    
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });
