@@ -577,6 +577,10 @@ a img{
   text-align: justify;
 }
 
+.mdl-card {
+  min-height: 100px;
+}
+
 .science-war-icon {
   background: url('../images/logo.png') center/cover;
 }
