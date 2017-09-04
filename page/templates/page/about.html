@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -31,7 +31,7 @@
       <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">2017년도 종목</div>
       <div class="science-war-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__soccer mdl-card mdl-shadow--3dp" onclick="location.href='soccer.html'">
+          <div class="science-war-event-card__soccer mdl-card mdl-shadow--3dp" onclick="location.href='/sports/soccer'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">축구</span>
             </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__basketball mdl-card mdl-shadow--3dp" onclick="location.href='basketball.html'">
+          <div class="science-war-event-card__basketball mdl-card mdl-shadow--3dp" onclick="location.href='sports/basketball'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">농구</span>
             </div>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__baseball mdl-card mdl-shadow--3dp" onclick="location.href='baseball.html'">
+          <div class="science-war-event-card__baseball mdl-card mdl-shadow--3dp" onclick="location.href='sports/baseball'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">야구</span>
             </div>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__esports mdl-card mdl-shadow--3dp" onclick="location.href='esports.html'">
+          <div class="science-war-event-card__esports mdl-card mdl-shadow--3dp" onclick="location.href='sports/esports'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">E-Sports</span>
             </div>
@@ -63,7 +63,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__quiz mdl-card mdl-shadow--3dp" onclick="location.href='quiz.html'">
+          <div class="science-war-event-card__quiz mdl-card mdl-shadow--3dp" onclick="location.href='sports/quiz'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">과학퀴즈</span>
             </div>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__hacking mdl-card mdl-shadow--3dp" onclick="location.href='hacking.html'">
+          <div class="science-war-event-card__hacking mdl-card mdl-shadow--3dp" onclick="location.href='sports/hacking'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">해킹</span>
             </div>
@@ -79,7 +79,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__ai mdl-card mdl-shadow--3dp" onclick="location.href='ai.html'">
+          <div class="science-war-event-card__ai mdl-card mdl-shadow--3dp" onclick="location.href='sports/ai'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">A.I.</span>
             </div>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
-          <div class="science-war-event-card__badminton mdl-card mdl-shadow--3dp" onclick="location.href='badminton.html'">
+          <div class="science-war-event-card__badminton mdl-card mdl-shadow--3dp" onclick="location.href='sports/badminton'">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__event">배드민턴</span>
             </div>
@@ -103,7 +103,7 @@
       <div class="science-war-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2002</span>
             </div>
@@ -112,7 +112,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2003</span>
             </div>
@@ -121,7 +121,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-postech-win mdl-card mdl-shadow--3dp">
-            <img src="images/postech.png" class="science-war-match-postech-win__image">
+            <img src="{% static 'images/postech.png' %}" class="science-war-match-postech-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2004</span>
             </div>
@@ -130,7 +130,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2005</span>
             </div>
@@ -139,7 +139,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2006</span>
             </div>
@@ -148,7 +148,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-postech-win mdl-card mdl-shadow--3dp">
-            <img src="images/postech.png" class="science-war-match-postech-win__image">
+            <img src="{% static 'images/postech.png' %}" class="science-war-match-postech-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2007</span>
             </div>
@@ -157,7 +157,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-postech-win mdl-card mdl-shadow--3dp">
-            <img src="images/postech.png" class="science-war-match-postech-win__image">
+            <img src="{% static 'images/postech.png' %}" class="science-war-match-postech-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2008</span>
             </div>
@@ -166,7 +166,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-draw mdl-card mdl-shadow--3dp">
-            <img src="images/draw.png" class="science-war-match-draw__image">
+            <img src="{% static 'images/draw.png' %}" class="science-war-match-draw__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2009</span>
             </div>
@@ -180,7 +180,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-postech-win mdl-card mdl-shadow--3dp">
-            <img src="images/postech.png" class="science-war-match-postech-win__image">
+            <img src="{% static 'images/postech.png' %}" class="science-war-match-postech-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2010</span>
             </div>
@@ -189,7 +189,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-postech-win mdl-card mdl-shadow--3dp">
-            <img src="images/postech.png" class="science-war-match-postech-win__image">
+            <img src="{% static 'images/postech.png' %}" class="science-war-match-postech-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2011</span>
             </div>
@@ -198,7 +198,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2012</span>
             </div>
@@ -207,7 +207,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2013</span>
             </div>
@@ -216,7 +216,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2014</span>
             </div>
@@ -225,7 +225,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-kaist-win mdl-card mdl-shadow--3dp">
-            <img src="images/kaist.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/kaist.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2015</span>
             </div>
@@ -234,7 +234,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
           <div class="science-war-match-postech-win mdl-card mdl-shadow--3dp">
-            <img src="images/postech.png" class="science-war-match-kaist-win__image">
+            <img src="{% static 'images/postech.png' %}" class="science-war-match-kaist-win__image">
             <div class="mdl-card__actions">
               <span class="science-war-card-image__year">2016</span>
             </div>
@@ -243,8 +243,8 @@
       </div>
     </div>
   </div>
-{% endblock %}
+  {% endblock %}
 
-{% block script %}
+  {% block script %}
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-{% endblock %}
+  {% endblock %}

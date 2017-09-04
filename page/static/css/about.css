@@ -583,43 +583,130 @@ a img{
   }
 }
 
-.science-war-match-postech-win.mdl-card {
+.science-war-match-draw__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  padding-top: 100%;
-  background: url('../images/postech.png') center / cover;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgba(254, 189, 52, 0.8);
 }
 
-.science-war-match-kaist-win.mdl-card {
+.science-war-match-postech-win {
+  position: relative;
   width: 100%;
-  padding-top: 100%;
-  background: url('../images/kaist.png') center / cover;
 }
 
-.science-war-match-draw.mdl-card {
+.science-war-match-postech-win__image {
+  display: block;
   width: 100%;
-  padding-top: 100%;
-  background: url('../images/draw.png') center / cover;
+  height: auto;
 }
 
 .science-war-match-postech-win > .mdl-card__actions {
   height: 40px;
   padding: 10px;
   background: rgba(200, 1, 80, 0.8);
-  text-align: center;
+}
+
+.science-war-match-kaist-win {
+  position: relative;
+  width: 100%;
+}
+
+.science-war-match-kaist-win__image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .science-war-match-kaist-win > .mdl-card__actions {
   height: 40px;
   padding: 10px;
   background: rgba(20, 135, 200, 0.8);
-  text-align: center;
+}
+
+.science-war-match-draw {
+  position: relative;
+  width: 100%;
+}
+
+.science-war-match-draw__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.science-war-match-draw:hover .science-war-match-draw__overlay {
+  opacity: 1;
 }
 
 .science-war-match-draw > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(255, 192, 0, 0.8);
-  text-align: center;
+  background: rgba(254, 189, 52, 0.8);
+}
+
+.science-war-card-image__year {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.science-war-player-card.mdl-card {
+  width: 100%;
+  padding-bottom: 100%;
+  background: url('../images/esports-player.png') center / cover;
+}
+
+.science-war-player-card > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(90, 90, 90, 0.8);
+}
+
+.science-war-card-image__player {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.science-war-player-captain-image {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/esports-captain.jpg') center / cover;
+}
+
+.mdl-cell--4-col-phone > .science-war-player-captain-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%
+}
+
+.science-war-event-text {
+  text-align: justify;
+}
+
+.mdl-card {
+  min-height: 100px;
+}
+
+.science-war-cancel-reason-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.science-war-cancel-reason {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+  color: white;
 }
 
 .science-war-card-image__year {
@@ -738,20 +825,10 @@ a img{
   font-weight: 500;
 }
 
-.science-war-player-postech-kaist-image {
+.science-war-image {
   width: 100%;
   padding-top: 100%;
   background: url('../images/postech-kaist.png') center / cover;
-}
-
-.mdl-cell--4-col-phone > .science-war-player-postech-kaist-image {
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%
-}
-
-.mdl-card {
-  min-height: 100px;
 }
 
 .science-war-icon {
