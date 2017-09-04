@@ -470,12 +470,14 @@ a img{
   .science-war-card-container .mdl-card__title-text {
     color: black;
     height: auto;
+    margin: auto;
   }
 
   .science-war-card-container .mdl-card__supporting-text {
     height: auto;
     color: black;
     padding-bottom: 56px;
+    text-align: center;
   }
 
   .science-war-card-container .mdl-card__actions {
