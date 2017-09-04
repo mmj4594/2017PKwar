@@ -186,7 +186,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('../../images/ponix.png') center 30% no-repeat;
+  background: url('../images/ponix.png') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -317,14 +317,14 @@ a img{
 
 .science-war-cyber-section {
   position: relative;
-  background: url('../../images/cyber.jpg') center top no-repeat;
+  background: url('../images/cyber.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
 
 .science-war-puzzle-section {
   position: relative;
-  background: url('../../images/puzzle.jpg') center top no-repeat;
+  background: url('../images/puzzle.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -403,7 +403,7 @@ a img{
   }
 
 .science-war-supporters-section-image {
-  background: url('../../images/devices.jpg') center top no-repeat;
+  background: url('../images/devices.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -581,19 +581,19 @@ a img{
 .science-war-match-postech-win.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../../images/postech.png') center / cover;
+  background: url('../images/postech.png') center / cover;
 }
 
 .science-war-match-kaist-win.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../../images/kaist.png') center / cover;
+  background: url('../images/kaist.png') center / cover;
 }
 
 .science-war-match-poka-draw.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../../images/poka.jpg') center / cover;
+  background: url('../images/poka.jpg') center / cover;
 }
 
 .science-war-match-postech-win > .mdl-card__actions {
@@ -623,7 +623,7 @@ a img{
 .science-war-player-card.mdl-card {
   width: 100%;
   padding-bottom: 100%;
-  background: url('../../images/ai-player.png') center / cover;
+  background: url('../images/ai-player.png') center / cover;
 }
 
 .science-war-player-card > .mdl-card__actions {
@@ -641,7 +641,7 @@ a img{
 .science-war-player-captain-image {
   width: 100%;
   padding-top: 100%;
-  background: url('../../images/AI-captain.png') center / cover;
+  background: url('../images/ai-captain.png') center / cover;
 }
 
 .mdl-cell--4-col-phone > .science-war-player-captain-image {
@@ -659,15 +659,15 @@ a img{
 }
 
 .science-war-icon {
-  background: url('../../images/logo.png') center/cover;
+  background: url('../images/logo.png') center/cover;
 }
 
 .poapper-icon {
-  background: url('../../images/poapper_logo.png') center/cover;
+  background: url('../images/poapper_logo.png') center/cover;
 }
 
 .pbs-icon {
-  background: url('../../images/pbs_logo.png') center/cover;
+  background: url('../images/pbs_logo.png') center/cover;
 }
 
 #map_canvas {
