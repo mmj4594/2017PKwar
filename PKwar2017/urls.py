@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^chat/', include('chat.urls')),
     url(r'^', include('page.urls')),
+	url(r'^quiz/', include('quiz.urls')),
 ]
