@@ -1,60 +1,146 @@
+{% extends "chat/layout.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Chat</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="{% static 'css/chatroom.css' %}">
-  <script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
-</head>
 
-<body onload="checkCookie()">
-  <!--<p>영상이 들어갈 자리 </p>-->
-  {% for which_video in which_video %}
-  <iframe width="560" height="315" src="{{which_video.which_video}}" frameborder="0" allowfullscreen></iframe>
-  {% endfor %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/chatroom.css' %}">
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
+{% endblock %}
 
-  <div id="POSTECH">
-    <div id = "P_chat"> </div>
-    <div class="input_site mdl-textfield mdl-js-textfield">
-      <input type="text" name="nickname" maxlength="8" placeholder = "닉네임" id="p_nickname">
-      <input type="text" name="content" maxlength="100" placeholder = "입력하세요" id="p_input" onkeypress="handle(event, 'P')"/>
-      <input type="button" name="button" value="입력" onclick="sendChat1();"/>
+{% block content %}
+<div class="science-war-content mdl-layout__content">
+  <div class="science-war-supporters-section">
+    <div class="science-war-supporters-section-text">
+      <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">진행중인 경기</div>
+      <div class="science-war-card-container mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            {% for which_video in which_video %}
+            <iframe width="100%" height="auto" src="{{which_video.which_video}}" frameborder="0" allowfullscreen></iframe>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            <div class="postech-title">POSTECH</div>
+            <div id="POSTECH">
+              <div id = "P_chat"> </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <input type="text" name="nickname" maxlength="8" id="p_nickname" class="mdl-textfield__input">
+                <label class="mdl-textfield__label" for="p_nickname">닉네임</label>
+              </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <textarea type="text" name="content" row="3" maxlength="100" class="mdl-textfield__input" id="p_input" onkeypress="handle(event, 'P')"></textarea>
+                <label class="mdl-textfield__label" for="p_input">안녕하세요</label>
+              </div>
+              <buttom class="mdl-button mdl-js-button mdl-js-ripple-effect send-button-postech" name="button" onclick="sendChat1();">
+                <i class="material-icons">send</i>
+              </buttom>
+            </div>
+          </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            <div class="kaist-title">KAIST</div>
+            <div id="KAIST">
+              <div id = "K_chat"> </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <input type="text" name="nickname" maxlength="8" id="k_nickname" class="mdl-textfield__input">
+                <label class="mdl-textfield__label" for="k_nickname">닉네임</label>
+              </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <textarea type="text" name="content" row="3" maxlength="100" class="mdl-textfield__input" id="k_input" onkeypress="handle(event, 'K')"></textarea>
+                <label class="mdl-textfield__label" for="k_input">안녕하세요</label>
+              </div>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect send-button-kaist" name="button" onclick="sendChat2();">
+                <i class="material-icons">send</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="banned_words">
+      {% for banned_word in banned_words %}
+      <a href="#">{{banned_word.banned_word}}</a>
+      {% endfor %}
+    </div>
+    <div id="banned_users">
+      {% for banned_user in banned_users %}
+      <a href="#">{{banned_user.banned_user}}</a>
+      {% endfor %}
+    </div>
+    <div id="is_freeze">
+      {% for is_freeze in is_freeze %}
+      <a href="#">{{is_freeze.is_freeze}}</a>
+      {% endfor %}
     </div>
   </div>
 
-  <div id="KAIST">
-    <div id = "K_chat"> </div>
-    <div class="input_site mdl-textfield mdl-js-textfield">
-      <input type="text" name="nickname" maxlength="8" placeholder = "닉네임" id="k_nickname">
-      <input type="text" name="content" maxlength="100" placeholder="입력하세요" id="k_input" onkeypress="handle(event, 'K')"/>
-      <input type="button" name="button" value="입력" onclick="sendChat2();"/>
+  <div class="science-war-supporters-section">
+    <div class="science-war-supporters-section-text">
+      <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">사이버 포카전 - 스타크래프트</div>
+      <div class="science-war-card-container mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            {% for which_video in which_video %}
+            <iframe width="100%" height="auto" src="{{which_video.which_video}}" frameborder="0" allowfullscreen></iframe>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="science-war-supporters-section">
+      <div class="science-war-supporters-section-text">
+        <div class="science-war-card-container mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+            <div class="science-war-event-card__starcraft mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__actions">
+                <span class="science-war-card-image__event">스타크래프트</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+            <div class="science-war-match-postech-score mdl-card mdl-shadow--3dp">
+              <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>2</span></div></div>
+            </div>
+          </div>
+
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+            <div class="science-war-match-kaist-score mdl-card mdl-shadow--3dp">
+              <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>3</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="banned_words">
+      {% for banned_word in banned_words %}
+      <a href="#">{{banned_word.banned_word}}</a>
+      {% endfor %}
+    </div>
+    <div id="banned_users">
+      {% for banned_user in banned_users %}
+      <a href="#">{{banned_user.banned_user}}</a>
+      {% endfor %}
+    </div>
+    <div id="is_freeze">
+      {% for is_freeze in is_freeze %}
+      <a href="#">{{is_freeze.is_freeze}}</a>
+      {% endfor %}
     </div>
   </div>
+{% endblock %}
 
-
-
-
-
-
-  <div id="banned_words">
-    {% for banned_word in banned_words %}
-    <a href="#">{{banned_word.banned_word}}</a>
-    {% endfor %}
-  </div>
-  <div id="banned_users">
-    {% for banned_user in banned_users %}
-    <a href="#">{{banned_user.banned_user}}</a>
-    {% endfor %}
-  </div>
-  <div id="is_freeze">
-    {% for is_freeze in is_freeze %}
-    <a href="#">{{is_freeze.is_freeze}}</a>
-    {% endfor %}
-  </div>
-
-  <script type="text/javascript" src="{% static 'js/chatroom.js' %}">
-  </script>
-
-</body>
-</html>
+{% block script %}
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script type="text/javascript" src="{% static 'js/chatroom.js' %}"></script>
+<script>
+window.onload = checkCookie();
+</script>
+{% endblock %}

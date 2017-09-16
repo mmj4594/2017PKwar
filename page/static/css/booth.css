@@ -70,10 +70,6 @@ a img{
   color: #222222;
 }
 
-.mdl-layout__drawer-button {
-  color: #222222;
-}
-
 .science-war-header {
   overflow: visible;
   background-color: white;
@@ -314,36 +310,6 @@ a img{
     z-index: 1;
   }
 
-  .android-drawer {
-  border-right: none;
-}
-
-  .science-war-drawer-separator {
-    height: 1px;
-    background-color: #dcdcdc;
-    margin: 8px 0;
-  }
-
-  .android-drawer .mdl-navigation__link.mdl-navigation__link {
-    font-size: 14px;
-    color: #757575;
-  }
-
-  .android-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
-  }
-
-  .android-drawer .mdl-layout-title {
-    position: relative;
-    background: #6ab344;
-    height: 160px;
-  }
-
-    .android-drawer .android-logo-image {
-      position: absolute;
-      bottom: 16px;
-    }
-
 
 .science-war-cyber-section {
   position: relative;
@@ -422,6 +388,20 @@ a img{
 }
 
 .science-war-supporters-section-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+.science-war-supporters-section-stuff {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+.science-war-supporters-section-event {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -523,6 +503,22 @@ a img{
   cursor: pointer;
 }
 
+.balanced-paragraph {
+  text-align: justify;
+}
+
+.science-war-icon {
+  background: url('../images/logo.png') center/cover;
+}
+
+.poapper-icon {
+  background: url('../images/poapper_logo.png') center/cover;
+}
+
+.pbs-icon {
+  background: url('../images/pbs_logo.png') center/cover;
+}
+
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
@@ -537,8 +533,8 @@ a img{
   .science-war-mobile-title {
     display: block !important;
     position: absolute;
-    left: 70px;
-    top: 0px;
+    left: 50px;
+    top: 0;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -601,150 +597,188 @@ a img{
   }
 }
 
-.science-war-player-card.mdl-card {
-  width: 100%;
-}
-
-.science-war-match-postech-win {
+.science-war-supporters-stuff {
   position: relative;
   width: 100%;
 }
 
-.science-war-match-postech-win__image {
+.science-war-supporters-stuff__image {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.science-war-match-kaist-win {
-  position: relative;
-  width: 100%;
-}
-
-.science-war-match-kaist-win__image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.science-war-match-kaist-win > .mdl-card__actions {
+.science-war-supporters-stuff > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(20, 135, 200, 0.8);
-}
-
-.send-button-postech {
-  width: 100%;
   background: rgba(200, 1, 80, 0.8);
 }
 
-.send-button-kaist {
-  width: 100%;
-  background: rgba(20, 135, 200, 0.8);
-}
-
-.postech-title {
-  height: 80px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 40px;
-  font-family: 'Teko', sans-serif;
-  color: rgb(200, 1, 80);
-}
-
-.kaist-title {
-  height: 80px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 40px;
-  font-family: 'Teko', sans-serif;
-  color: rgb(20, 135, 200);
-}
-
-.science-war-event-card__starcraft.mdl-card {
-  width: 100%;
-  padding-top: 100%;
-  background: url('../images/starcraft.png') center / cover;
-}
-
-.science-war-event-card__starcraft > .mdl-card__actions {
-  height: 40px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  text-align: center;
-}
-
-.science-war-card-image__event {
+.science-war-supporters-stuff__name {
   color: #fff;
   font-size: 14px;
   font-weight: 500;
 }
 
-.science-war-match-postech-score {
-  position: relative;
+.science-war-player-card.mdl-card {
   width: 100%;
-  overflow: hidden;
-  background: rgba(200, 1, 80, 0.8);
+  padding-bottom: 100%;
+  background: url('../images/esports-player.png') center / cover;
 }
 
-.science-war-match-postech-score:before {
-  content: "";
-  display: block;
+.science-war-player-card > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(90, 90, 90, 0.8);
+}
+
+.science-war-card-image__player {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.science-war-player-captain-image {
+  width: 100%;
   padding-top: 100%;
+  background: url('../images/esports-captain.jpg') center / cover;
 }
 
-.science-war-match-kaist-score {
-  position: relative;
+.mdl-cell--4-col-phone > .science-war-player-captain-image {
   width: 100%;
-  overflow: hidden;
-  background: rgba(20, 135, 200, 0.8);
+  height: 0;
+  padding-bottom: 100%
 }
 
-.science-war-match-kaist-score:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-@media (max-width: 840px) {
-  .science-war-match-postech-score:before {
-    content: "";
-    display: block;
-    padding-top: calc(200% + 16px);
-  }
-
-  .science-war-match-kaist-score:before {
-    content: "";
-    display: block;
-    padding-top: calc(200% + 16px);
-  }
-}
-
-.science-war-result-score-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: white;
-}
-
-.science-war-result-score-text div {
-  display: table;
-  width: 100%;
-  height: 100%;
-  font-size: 64px;
-}
-
-.science-war-result-score-text span {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  color: white;
+.science-war-event-text {
+  text-align: justify;
 }
 
 .mdl-card {
   min-height: 100px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal-content {
+  margin-top: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: auto;
+  width: 60%;
+}
+
+@media (min-width: 550px) and (max-width: 840px) {
+  .modal-content {
+    margin-top: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal-content {
+    margin-top: 20%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: auto;
+    width: 95%;
+  }
+}
+
+.modal-content > .mdl-card__actions {
+  background-color: rgba(222, 222, 222, 0.25);
+}
+
+.modal-box {
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+}
+
+.modal-cancel {
+  text-align: center;
+}
+
+.mdl-data-table {
+  text-align: center;
+}
+
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+    .table-responsive > .table {
+        margin-bottom: 0;
+    }
+    .table-responsive > .table > thead > tr > th,
+    .table-responsive > .table > tbody > tr > th,
+    .table-responsive > .table > tfoot > tr > th,
+    .table-responsive > .table > thead > tr > td,
+    .table-responsive > .table > tbody > tr > td,
+    .table-responsive > .table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+    .table-responsive > .table-bordered {
+        border: 0;
+    }
+    .table-responsive > .table-bordered > thead > tr > th:first-child,
+    .table-responsive > .table-bordered > tbody > tr > th:first-child,
+    .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+    .table-responsive > .table-bordered > thead > tr > td:first-child,
+    .table-responsive > .table-bordered > tbody > tr > td:first-child,
+    .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+        border-left: 0;
+    }
+    .table-responsive > .table-bordered > thead > tr > th:last-child,
+    .table-responsive > .table-bordered > tbody > tr > th:last-child,
+    .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+    .table-responsive > .table-bordered > thead > tr > td:last-child,
+    .table-responsive > .table-bordered > tbody > tr > td:last-child,
+    .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+        border-right: 0;
+    }
+    .table-responsive > .table-bordered > tbody > tr:last-child > th,
+    .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+    .table-responsive > .table-bordered > tbody > tr:last-child > td,
+    .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+        border-bottom: 0;
+    }
+}
+
+table {
+  width: 100%;
+  margin: auto;
+}
+
+.mdl-data-table td {
+  text-align: center;
+}
+
+
+.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
+  text-align: center;
 }
 
 .science-war-icon {
@@ -757,48 +791,4 @@ a img{
 
 .pbs-icon {
   background: url('../images/pbs_logo.png') center/cover;
-}
-
-.{
-  margin: 0;
-  padding: 0;
-}
-
-table{
-  width: 100%;
-}
-
-.input_site{
-  width: 100%;
-}
-
-#POSTECH{
-  //background-color: rgba(200, 1, 80, 0.5);
-}
-
-#KAIST{
-  //background-color: rgba(20, 135, 200, 0.5);
-}
-
-#POSTECH, #KAIST{
-  display: block;
-  width: 100%;
-}
-
-
-.input_site{
-  margin: auto;
-  text-align: center;
-  position: relative;
-  bottom: 0px;
-  width: 100%
-}
-
-#P_chat, #K_chat{
-  height: 250px;
-  overflow: auto;
-}
-
-#banned_words, #banned_users, #is_freeze{
-  display: none;
 }

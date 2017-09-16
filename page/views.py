@@ -51,6 +51,8 @@ def schedule(request):
     return render(request, "page/schedule.html")
 def poapper(request):
     return render(request, "page/poapper.html")
+def booth(request):
+    return render(request, "page/booth.html")
 
 
 
