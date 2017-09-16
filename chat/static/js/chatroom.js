@@ -5,6 +5,12 @@ var ws2 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://
 
 
 
+setInterval(function(){
+    $.ajax({url: "/chat/reload_match", success: function(result){
+        $("#scoreboard").html(result);
+    }});
+}, 60000);
+
 
 //10초마다 밴 정보 로드.
 var increment = 0;
@@ -315,18 +321,12 @@ function banusercheck(user_id){
 
 
 
-
-
-
-
-
 //쿠키
 function setCookie(cname) {
     var d = new Date();
     d.setTime(d.getTime() + (5*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     var cvalue = makeid();
-    //Math.floor(Math.random() * 10) * 1000000 +  Math.floor(Math.random() * 10) * 100000 +  Math.floor(Math.random() * 10) * 10000 + Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10);
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
@@ -368,5 +368,43 @@ function checkCookie() {
 
 
 
-/*---------------problems------------------*/
-//3. 원하는 글(딱 한 개)을 임의로 삭제하는 기능 추가.
+
+
+//날짜 관리
+var d = new Date();
+var d_dateString = d.toDateString();
+var d_timeString = d.toTimeString();
+
+var Hour = parseInt(d_timeString.slice(0, 2)); //시
+var Minute = parseInt(d_timeString.slice(3, 5)); //분
+var Second = parseInt(d_timeString.slice(6, 8)); //초
+var Gmt = d_timeString.slice(9, 17); //GMT
+
+var Day = d_dateString.slice(0, 3); //요일
+var Month = d_dateString.slice(4, 7); //월
+var date = parseInt(d_dateString.slice(8, 10)); //일
+var Year = parseInt(d_dateString.slice(11, 15)); //년
+
+
+
+
+//실시간 경기 중
+var sports_section = document.getElementById('scoreboard');
+var temp;
+
+for(var i=0; i < sports_section.childElementCount; i++){
+  temp = sports_section.children[i].children[1].children[0].children[0].children[3];
+
+  if(Gmt === "GMT+0900"){
+    if(Year === parseInt(temp.children[1].innerHTML) && Month === temp.children[2].innerHTML && date === parseInt(temp.children[3].innerHTML) && (Day === temp.children[4].innerHTML)){
+      //n시
+      if(Hour === parseInt(temp.children[5].innerHTML) && Minute >= parseInt(temp.children[6].innerHTML)){
+        $('#' + temp.children[0].innerHTML).css('display', 'block');
+      }
+      //n시 이후
+      else if(Hour > parseInt(temp.children[4].innerHTML)) {
+        $('#timetest_' + i).css('display', 'block');
+      }
+    }
+  }
+}
