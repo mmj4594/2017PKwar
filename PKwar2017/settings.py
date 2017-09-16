@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'page',
     'chat',
+	'quiz',
 ]
 
 CHANNEL_LAYERS = {
