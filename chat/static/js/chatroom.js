@@ -7,25 +7,25 @@ var ws2 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://
 
 
 setInterval(function(){
-    $.ajax({url: "/chat/reload_match", success: function(result){
+    $.ajax({url: "/live/reload_match", success: function(result){
         $(".livematch").html(result);
     }});
-}, 300000);
+}, 5000);
 
 setInterval(function(){
-    $.ajax({url: "/chat/reload_banuser", success: function(result){
+    $.ajax({url: "/live/reload_banuser", success: function(result){
         $("#banned_users").html(result);
     }});
 }, 10000);
 
 setInterval(function(){
-    $.ajax({url: "/chat/reload_banword", success: function(result){
+    $.ajax({url: "/live/reload_banword", success: function(result){
         $("#banned_words").html(result);
     }});
 }, 10000);
 
 setInterval(function(){
-    $.ajax({url: "/chat/reload_freeze", success: function(result){
+    $.ajax({url: "/live/reload_freeze", success: function(result){
         $("#is_freeze").html(result);
     }});
 }, 10000);
