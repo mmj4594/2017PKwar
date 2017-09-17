@@ -10,11 +10,12 @@
 		<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 		<style>
 		@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 		html {
-			background-image: url("quizbg.png");
 			background-repeat: repeat;
 			background-size: 200px 200px;
 			background-position: center center;
@@ -139,24 +140,49 @@
 			background-color: #eee;
 		}
 
-		.bingo-cell.math {
-			color: rgb(179, 179, 240);
+		.bingo-cell.phys {
+			color: #0074D9;
 		}
 
 		.bingo-cell.chem {
-			color: rgb(192, 216, 109);
+			color: orangered;
 		}
 
 		.bingo-cell.bio {
-			color: rgb(240, 223, 120);
+			color: limegreen;
 		}
 
-		.bingo-cell.phys {
-			color: rgb(243, 176, 91);
+		.bingo-cell.math {
+			color: orange;
 		}
 
 		.bingo-cell.com {
-			color: rgb(244, 66, 67);
+			color: slategray;
+		}
+
+		span.phys {
+			color: #0074D9;
+		}
+
+		span.chem {
+			color: orangered;
+		}
+
+		span.bio {
+			color: limegreen;
+		}
+
+		span.math {
+			color: orange;
+		}
+
+		span.com {
+			color: slategray;
+		}
+
+		.info-container p {
+			margin-top: 20px;
+			margin-bottom: 10px;
 		}
 
 		.info-container {
@@ -245,7 +271,7 @@
 			<h1 id="title">Science Quiz</h1>
 		</div>
 		<div class="quiz-container">
-			<div class="quiz">
+			<div class="quiz" id="quiz">
 				<div class="quiz-number">QUIZ No.1</div>
 				<div class="quiz-content">명령어를 읽어 순차적으로 실행하는 프로세서에 적용되는 기술로, 한 번에 하나의 명령어만 실행하는 것이 아니라 하나의 명령어가 실행되는 도중에 다른 명령어 실행을 시작하는 식으로 동시에 여러 개의 명령어를 실행하는 기법은? 명령어를 읽어 순차적으로 실행하는 프로세서에 적용되는 기술로, 한 번에 하나의 명령어만 실행하는 것이 아니라 하나의 명령어가 실행되는 도중에 다른 명령어 실행을 시작하는 식으로 동시에 여러 개의 명령어를 실행하는 기법은? 명령어를 읽어 순차적으로 실행하는 프로세서에 적용되는 기술로, 한 번에 하나의 명령어만 실행하는 것이 아니라 하나의 명령어가 실행되는 도중에 다른 명령어 실행을 시작하는 식으로 동시에 여러 개의 명령어를 실행하는 기법은?</div>
 				<div id="clock">01:37</div>
@@ -328,9 +354,105 @@
 			</div>
 		</div>
 		<div class="info-container">
-			<h1><span class="postech">1000</span> : <span class="kaist">1000</span></h1>
+			<p><span class="math">■ MATH</span> <span class="chem">■ CHEM</span> <span class="bio">■ BIO</span> <span class="phys">■ PHYS</span> <span class="com">■ COM</span></p>
+			<h1><span class="postech" id="postechscore">1000</span> : <span class="kaist" id="kaistscore">1000</span></h1>
 			<h2>최근 3문제 정답 여부</h2>
-			<h3>O O X : O X O</h3>
+			<h3 id="rightwrong">O O X : O X O</h3>
 		</div>
+<script>
+	API_URL = 'http://' + window.location.hostname + ':' + window.location.port;
+
+	var postechbingo = $(".bingo-container.postech");
+	var kaistbingo = $(".bingo-container.kaist");
+	var quiz = $("#quiz");
+
+	function loadJson() {
+		$.ajax({
+			url: API_URL + '/quiz/json',
+			dataType: 'json',
+		}).done(function(data){
+			postechbingo.empty();
+			kaistbingo.empty();
+			quiz.empty();
+
+			postechbingo.append($('<div class="bingo-header">P O S T E C H</div>'));
+			kaistbingo.append($('<div class="bingo-header">K A I S T</div>'));
+
+			quiz.append($('<div class="quiz-number">QUIZ No.' + data.quiznow.num + '</div>'));
+			quiz.append($('<div class="quiz-content">' + data.quiznow.content + '</div>'));
+			quiz.append($('<div id="clock">02:00</div>'));
+
+
+			for (var i=0; i<5; i++) {
+				row = $('<div class="bingo-row"></div>');
+				for (var j=0; j<5; j++) {
+					info = data.postech_bingo[i][j];
+
+					cell = $('<div class="bingo-cell">' + info.num + '</div>');
+
+					if (info.num <= 5)
+						cell.addClass("phys");
+					else if (info.num <= 10)
+						cell.addClass("chem");
+					else if (info.num <=15)
+						cell.addClass("bio");
+					else if (info.num <=20)
+						cell.addClass("math");
+					else if (info.num <= 25)
+						cell.addClass("com");
+
+					if (info.passed) {
+						if (info.right)
+							cell.addClass("right");
+						else
+							cell.addClass("wrong");
+					}
+
+					row.append(cell);
+				}
+				postechbingo.append(row);
+			}
+
+			for (var i=0; i<5; i++) {
+				row = $('<div class="bingo-row"></div>');
+				for (var j=0; j<5; j++) {
+					info = data.kaist_bingo[i][j];
+
+					cell = $('<div class="bingo-cell">' + info.num + '</div>');
+
+					if (info.num <= 5)
+						cell.addClass("phys");
+					else if (info.num <= 10)
+						cell.addClass("chem");
+					else if (info.num <=15)
+						cell.addClass("bio");
+					else if (info.num <=20)
+						cell.addClass("math");
+					else if (info.num <= 25)
+						cell.addClass("com");
+
+					if (info.passed) {
+						if (info.right)
+							cell.addClass("right");
+						else
+							cell.addClass("wrong");
+					}
+
+					row.append(cell);
+				}
+				kaistbingo.append(row);
+			}
+
+			$("#postechscore").html(data.postechscore);
+			$("#kaistscore").html(data.kaistscore);
+
+			$("#rightwrong").html(data.postechrw + " : " + data.kaistrw);
+		}).fail(function(xhr, status, err) {
+			console.error(status, err.toString());
+		});
+	}
+
+	setInterval(loadJson, 4000);
+</script>
 	</body>
 </html>
