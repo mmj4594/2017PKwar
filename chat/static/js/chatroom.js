@@ -7,9 +7,9 @@ var ws2 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://
 
 setInterval(function(){
     $.ajax({url: "/chat/reload_match", success: function(result){
-        $("#scoreboard").html(result);
+        $(".livematch").html(result);
     }});
-}, 60000);
+}, 300000);
 
 
 //10초마다 밴 정보 로드.
@@ -389,7 +389,7 @@ var Year = parseInt(d_dateString.slice(11, 15)); //년
 
 
 //실시간 경기 중
-var sports_section = document.getElementById('scoreboard');
+var sports_section = document.getElementById('finished_match');
 var temp;
 
 for(var i=0; i < sports_section.childElementCount; i++){
@@ -402,9 +402,13 @@ for(var i=0; i < sports_section.childElementCount; i++){
         $('#' + temp.children[0].innerHTML).css('display', 'block');
       }
       //n시 이후
-      else if(Hour > parseInt(temp.children[4].innerHTML)) {
-        $('#timetest_' + i).css('display', 'block');
+      else if(Hour > parseInt(temp.children[5].innerHTML)) {
+        $('#' + temp.children[0].innerHTML).css('display', 'block');
       }
+    }
+
+    else if(Year === parseInt(temp.children[1].innerHTML) && Month === temp.children[2].innerHTML && date > parseInt(temp.children[3].innerHTML)){
+      $('#' + temp.children[0].innerHTML).css('display', 'block');
     }
   }
 }

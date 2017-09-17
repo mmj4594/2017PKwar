@@ -20,12 +20,16 @@ class Freeze(models.Model):
     is_freeze = models.BooleanField()
 
 
-class WhichVideo(models.Model):
+class LiveMatch(models.Model):
+    match_name = models.CharField(max_length=20, default="sports")
+    경기명 = models.CharField(max_length=20, default="경기")
+    p_score = models.IntegerField(default=0)
+    k_score = models.IntegerField(default = 0)
     which_video = models.TextField()
     def __str__(self):
-        return self.which_video
+        return self.match_name
 
-class Match(models.Model):
+class FinishedMatch(models.Model):
     match_name = models.CharField(max_length=20, default="sports")
     year = models.IntegerField(default=0)
     month = models.CharField(max_length=4, default="Sep")
