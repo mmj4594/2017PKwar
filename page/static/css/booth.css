@@ -597,24 +597,58 @@ a img{
   }
 }
 
-.science-war-supporters-stuff {
+.science-war-postech-booth-event {
   position: relative;
   width: 100%;
 }
 
-.science-war-supporters-stuff__image {
+.science-war-postech-booth-event__image {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.science-war-supporters-stuff > .mdl-card__actions {
+.science-war-postech-booth-event > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(200, 1, 80, 0.8);
+  background: rgba(137, 172, 149, 0.8);
 }
 
-.science-war-supporters-stuff__name {
+.science-war-exchange-booth-event {
+  position: relative;
+  width: 100%;
+}
+
+.science-war-exchange-booth-event__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.science-war-exchange-booth-event > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(254, 152, 94, 0.8);
+}
+
+.science-war-food-truck-event {
+  position: relative;
+  width: 100%;
+}
+
+.science-war-food-truck-event__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.science-war-food-truck-event > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(190, 190, 190, 0.8);
+}
+
+.science-war-booth-event__name {
   color: #fff;
   font-size: 14px;
   font-weight: 500;
