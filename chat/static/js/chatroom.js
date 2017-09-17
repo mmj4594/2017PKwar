@@ -5,69 +5,30 @@ var ws2 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://
 
 
 
+
 setInterval(function(){
     $.ajax({url: "/chat/reload_match", success: function(result){
         $(".livematch").html(result);
     }});
 }, 300000);
 
-
-//10초마다 밴 정보 로드.
-var increment = 0;
 setInterval(function(){
-  $.ajax({
-    type: "GET",
-    url: '/chat/reload_banuser/',
-    data: {'increment': increment}
-  })
-  .done(function(response){
-    var parent = document.getElementById('banned_users');
-    var count = parent.childElementCount;
-    for(var i = 0; i < count; i++){
-      var child = parent.children[0];
-      parent.removeChild(child);
-    }
-    $('#banned_users').append(response);
-    increment += 10;
-  });
-}, 10000)
+    $.ajax({url: "/chat/reload_banuser", success: function(result){
+        $("#banned_users").html(result);
+    }});
+}, 10000);
 
 setInterval(function(){
-  $.ajax({
-    type: "GET",
-    url: '/chat/reload_banword/',
-    data: {'increment': increment}
-  })
-  .done(function(response){
-    var parent = document.getElementById('banned_words');
-    var count = parent.childElementCount;
-    for(var i = 0; i < count; i++){
-      var child = parent.children[0];
-      parent.removeChild(child);
-    }
-    $('#banned_words').append(response);
-    increment += 10;
-  });
-}, 10000)
+    $.ajax({url: "/chat/reload_banword", success: function(result){
+        $("#banned_words").html(result);
+    }});
+}, 10000);
 
 setInterval(function(){
-  $.ajax({
-    type: "GET",
-    url: '/chat/reload_freeze/',
-    data: {'increment': increment}
-  })
-  .done(function(response){
-    var parent = document.getElementById('is_freeze');
-    var count = parent.childElementCount;
-    for(var i = 0; i < count; i++){
-      var child = parent.children[0];
-      parent.removeChild(child);
-    }
-    $('#is_freeze').append(response);
-    increment += 10;
-  });
-}, 10000)
-
+    $.ajax({url: "/chat/reload_freeze", success: function(result){
+        $("#is_freeze").html(result);
+    }});
+}, 10000);
 
 
 
@@ -124,7 +85,7 @@ function sendChat1() {
         alert('Freezing!');
       }
       else{
-        if(nickname.value != ""){
+        if(nickname.value != "" && nickname.value != "admin"){
           if(element.value != ""){
             ws1.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
             element.value = "";
@@ -165,7 +126,7 @@ function sendChat2() {
         alert('관리자가 채팅창을 얼렸습니다!');
       }
       else{
-        if(nickname.value != ""){
+        if(nickname.value != "" && nickname.value != "admin"){
           if(element.value != "") {
             ws2.send(nickname.value + ": " + element.value + "$!:@{#4'}>+*&:|" + user_id);
             element.value = "";

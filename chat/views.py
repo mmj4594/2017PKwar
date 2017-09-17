@@ -19,16 +19,18 @@ def index(request):
     return render(request, "chat/index.html", context)
 
 def adminindex(request):
+    admin_users = AdminUser.objects.all()
     banned_words = BannedWord.objects.all()
     banned_users = BannedUser.objects.all()
-    admin_users = AdminUser.objects.all()
     is_freeze = Freeze.objects.all()
+    livematch = LiveMatch.objects.all()
     matches = FinishedMatch.objects.all()
     context = {
+    'admin_users': admin_users,
     'banned_words': banned_words,
     'banned_users': banned_users,
-    'admin_users': admin_users,
     'is_freeze': is_freeze,
+    'livematch': livematch,
     'matches': matches,
     }
     return render(request, "chat/adminindex.html", context)
@@ -37,8 +39,6 @@ def adminindex(request):
 
 
 def reload_banuser(request):
-    incremenet = int(request.GET['increment'])
-    incremenet_to = incremenet + 10
     banned_users = BannedUser.objects.all()
     context = {
     'banned_users': banned_users,
@@ -46,8 +46,6 @@ def reload_banuser(request):
     return render(request, 'chat/reload_banuser.html', context)
 
 def reload_banword(request):
-    incremenet = int(request.GET['increment'])
-    incremenet_to = incremenet + 10
     banned_words = BannedWord.objects.all()
     context = {
     'banned_words': banned_words,
@@ -55,8 +53,6 @@ def reload_banword(request):
     return render(request, 'chat/reload_banword.html', context)
 
 def reload_freeze(request):
-    incremenet = int(request.GET['increment'])
-    incremenet_to = incremenet + 10
     is_freeze = Freeze.objects.all()
     context = {
     'is_freeze': is_freeze,

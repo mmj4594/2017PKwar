@@ -1,70 +1,193 @@
+{% extends "chat/layout.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Chat_admin</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
-  <script src="{% static 'js/jquery-3.2.1.min.js' %}">
 
-  </script>
-</head>
-<body onload="checkCookie()">
-  <table>
-    <tr>
-      <td id="POSTECH">
-        <div id = "P_chat"> </div>
-        <div class="input_site">
-          <input type="text" name="nickname" value = "admin" id="p_nickname">
-          <input type="text" name="content" placeholder = "입력하세요" id="p_input" onkeypress="handle(event, 'P')"/>
-          <input type="button" name="button" value="입력" onclick="sendChat1();"/>
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"> </script>
+{% endblock %}
+
+{% block content %}
+<div class="science-war-content mdl-layout__content">
+  <div class="science-war-supporters-section">
+    <div class="science-war-supporters-section-text">
+      <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">진행중인 경기</div>
+
+
+      <div class="livematch">
+      {% for livematch in livematch %}
+        <div class="science-war-supporters-section">
+          <div class="science-war-supporters-section-text">
+            <div class="science-war-card-container mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="science-war-event-card__{{livematch.match_name}} mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__actions">
+                    <span class="science-war-card-image__event">{{livematch.경기명}}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                <div class="science-war-match-postech-score mdl-card mdl-shadow--3dp">
+                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>{{livematch.p_score}}</span></div></div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                <div class="science-war-match-kaist-score mdl-card mdl-shadow--3dp">
+                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>{{livematch.k_score}}</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </td>
-      <td>
-        <!--<p>영상이 들어갈 자리 </p>-->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vIlm90G9-Ik" frameborder="0" allowfullscreen></iframe>
-      </td>
-      <td id="KAIST">
-        <div id = "K_chat"> </div>
-        <div class="input_site">
-          <input type="text" name="nickname" value = "admin" id="k_nickname">
-          <input type="text" name="content" placeholder="입력하세요" id="k_input" onkeypress="handle(event, 'K')"/>
-          <input type="button" name="button" value="입력" onclick="sendChat2();"/>
+      {% endfor %}
+      </div>
+
+      {% for livematch in livematch %}
+      <div class="science-war-card-container mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            <iframe width="100%" height="auto" src="{{livematch.which_video}}" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+      {% endfor %}
 
-  <h2>banned words</h2>
-  <div id="banned_words">
-    {% for banned_word in banned_words %}
-    <a href="#">{{banned_word.banned_word}}</a>
-    {% endfor %}
+      <div class="science-war-card-container mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            <div class="postech-title">POSTECH</div>
+            <div id="POSTECH">
+              <div id = "P_chat"> </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <input type="text" name="nickname" maxlength="8" id="p_nickname" class="mdl-textfield__input">
+                <label class="mdl-textfield__label" for="p_nickname">admin</label>
+              </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <textarea type="text" name="content" row="3" maxlength="100" class="mdl-textfield__input" id="p_input" onkeypress="handle(event, 'P')"></textarea>
+                <label class="mdl-textfield__label" for="p_input">안녕하세요</label>
+              </div>
+              <buttom class="mdl-button mdl-js-button mdl-js-ripple-effect send-button-postech" name="button" onclick="sendChat1();">
+                <i class="material-icons">send</i>
+              </buttom>
+            </div>
+          </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            <div class="kaist-title">KAIST</div>
+            <div id="KAIST">
+              <div id = "K_chat"> </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <input type="text" name="nickname" maxlength="8" id="k_nickname" class="mdl-textfield__input">
+                <label class="mdl-textfield__label" for="k_nickname">admin</label>
+              </div>
+              <div class="input_site mdl-textfield mdl-js-textfield">
+                <textarea type="text" name="content" row="3" maxlength="100" class="mdl-textfield__input" id="k_input" onkeypress="handle(event, 'K')"></textarea>
+                <label class="mdl-textfield__label" for="k_input">안녕하세요</label>
+              </div>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect send-button-kaist" name="button" onclick="sendChat2();">
+                <i class="material-icons">send</i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="scoreboard">
+
+        </div>
+      </div>
+    </div>
+
+    <h2>Banned Words</h2>
+    <div id="banned_words">
+      {% for banned_word in banned_words %}
+      <a href="#">{{banned_word.banned_word}}</a>
+      {% endfor %}
+    </div>
+
+    <h2>Banned Users</h2>
+    <div id="banned_users">
+      {% for banned_user in banned_users %}
+      <a href="#">{{banned_user.banned_user}}</a>
+      {% endfor %}
+    </div>
+
+    <h2>admin users</h2>
+    <div id="admins">
+      {% for admin_user in admin_users %}
+      <a href="#">{{admin_user.admin_user}}</a>
+      {% endfor %}
+    </div>
+
+    <h2>Freezing</h2>
+    <div id="is_freeze">
+      {% for is_freeze in is_freeze %}
+      <a href="#">{{is_freeze.is_freeze}}</a>
+      {% endfor %}
+    </div>
   </div>
 
-  <h2>banned users</h2>
-  <div id="banned_users">
-    {% for banned_user in banned_users %}
-    <a href="#">{{banned_user.banned_user}}</a>
-    {% endfor %}
+  <div class="science-war-supporters-section">
+    <div id="finished_match">
+      {% for matches in matches %}
+      <div id="{{matches.match_name}}">
+        <div class="science-war-supporters-section-text">
+          <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">사이버 포카전 - {{matches.게임명}}</div>
+          <div class="science-war-card-container mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+              <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+                <iframe width="100%" height="auto" src="{{matches.which_video}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="science-war-supporters-section">
+          <div class="science-war-supporters-section-text">
+            <div class="science-war-card-container mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="science-war-event-card__{{matches.match_name}} mdl-card mdl-shadow--3dp">
+                  <div class="mdl-card__actions">
+                    <span class="science-war-card-image__event">{{matches.게임명}}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                <div class="science-war-match-postech-score mdl-card mdl-shadow--3dp">
+                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>{{matches.p_score}}</span></div></div>
+                </div>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                <div class="science-war-match-kaist-score mdl-card mdl-shadow--3dp">
+                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>{{matches.k_score}}</span></div></div>
+                </div>
+              </div>
+
+              <div class="date">
+                <a href="#">{{matches.match_name}}</a>
+                <a href="#">{{matches.year}}</a>
+                <a href="#">{{matches.month}}</a>
+                <a href="#">{{matches.date}}</a>
+                <a href="#">{{matches.day}}</a>
+                <a href="#">{{matches.hour}}</a>
+                <a href="#">{{matches.minute}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
+{% endblock %}
 
-  <h2>admin users</h2>
-  <div id="admins">
-    {% for admin_user in admin_users %}
-    <a href="#">{{admin_user.admin_user}}</a>
-    {% endfor %}
-  </div>
-
-  <h2>freezing chatting</h2>
-  <div id="is_freeze">
-    {% for is_freeze in is_freeze %}
-    <a href="#">{{is_freeze.is_freeze}}</a>
-    {% endfor %}
-  </div>
-
-  <script type="text/javascript" src="{% static 'js/admin.js' %}">
-  </script>
-
-</body>
-</html>
+{% block script %}
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script type="text/javascript" src="{% static 'js/admin.js' %}"></script>
+<script>
+window.onload = checkCookie();
+</script>
+{% endblock %}
