@@ -7,7 +7,7 @@ handler500 = 'page.views.error500'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^chat/', include('chat.urls')),
+    url(r'^live/', include('chat.urls')),
     url(r'^', include('page.urls')),
 	url(r'^quiz/', include('quiz.urls')),
 ]

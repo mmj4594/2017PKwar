@@ -21,15 +21,27 @@ limitations under the License
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+
+  <meta property="og:title" content="2017 포카전" />
+  <meta property="og:description" content="2017 포스텍카이스트학생대제전" />
+  <meta property="og:image" content="{% static 'images/ponix.png' %}" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>2017 POSTECH-KAIST Science War</title>
+  <link rel="shortcut icon" href="{%  static 'images/favicon.png' %}">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{%  static 'apple-icon/57x57.jpg' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{%  static 'apple-icon/72x72.jpg' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{%  static 'apple-icon/114x114.jpg' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{%  static 'apple-icon/144x144.jpg' %}" />
 
   <!-- Page styles -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
-  {% block css %}{% endblock %}
+
+{% block css %}{% endblock %}
+
   <style>
   #view-source {
     position: fixed;
@@ -41,78 +53,87 @@ limitations under the License
     z-index: 900;
   }
   </style>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-68675663-5', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </head>
 <body>
-  <!--위의 메뉴 바-->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <div class="science-war-header mdl-layout__header mdl-layout__header--waterfall">
-      <div class="mdl-layout__header-row">
-        <span class="science-war-title mdl-layout-title">
-          <img class="logo-image" src="{% static 'images/logo.png' %}">
-        </span>
-        <!-- Add spacer, to align navigation to the right in desktop -->
-        <div class="science-war-header-spacer mdl-layout-spacer"></div>
-        <!-- Navigation -->
-        <div class="science-war-navigation-container">
-          <nav class="science-war-navigation mdl-navigation">
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/chat">Live</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/about/">포카전</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/sports/soccer/">경기</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">사이버포카전</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/supporters/">서포터즈</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">미궁</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">일정</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/map">지도</a>
-          </nav>
-        </div>
-        <span class="science-war-mobile-title mdl-layout-title">
-          <img class="logo-image" src="{% static 'images/logo.png' %}">
-        </span>
-      </div>
-    </div>
-
+  <div class="mdl-layout mdl-js-layout">
     <div class="science-war-drawer mdl-layout__drawer">
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="/chat/">Live</a>
-        <a class="mdl-navigation__link" href="">포카전</a>
-        <a class="mdl-navigation__link" href="sports/soccer">경기</a>
-        <a class="mdl-navigation__link" href="">사이버포카전</a>
-        <a class="mdl-navigation__link" href="/supporters/">서포터즈</a>
-        <a class="mdl-navigation__link" href="">미궁</a>
-        <a class="mdl-navigation__link" href="">일정</a>
-        <a class="mdl-navigation__link" href="/map/">지도</a>
+        <a href="/home"><img class="logo-image" src="{% static 'images/brand.png' %}"></a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/live" id="cyber">Live</a>
+        <div class="science-war-drawer-separator"></div>
+        <span class="mdl-navigation__link">포카전</span>
+        <a class="mdl-navigation__link" href="/about">소개</a>
+        <a class="mdl-navigation__link" href="/messages">축사</a>
+        <div class="science-war-drawer-separator"></div>
+        <span class="mdl-navigation__link">경기</span>
+        <a class="mdl-navigation__link" href="/sports/soccer">축구</a>
+        <a class="mdl-navigation__link" href="/sports/basketball">농구</a>
+        <a class="mdl-navigation__link" href="/sports/baseball">야구</a>
+        <a class="mdl-navigation__link" href="/sports/esports">E-sports</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/sports/quiz">과학퀴즈</a>
+        <a class="mdl-navigation__link" href="/sports/hacking">해킹</a>
+        <a class="mdl-navigation__link" href="/sports/ai">A.I.</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/sports/badminton">배드민턴</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/cyber" id="cyber">사이버포카전</a>
+        <a class="mdl-navigation__link" href="/cyber/starcraft">스타크래프트</a>
+        <a class="mdl-navigation__link" href="/cyber/starcraft2">스타크래프트2</a>
+        <a class="mdl-navigation__link" href="/cyber/hearthstone">하스스톤</a>
+        <a class="mdl-navigation__link" href="/cyber/kartrider">카트라이더</a>
+        <a class="mdl-navigation__link" href="/cyber/heroes_of_the_storm">히어로즈 오브 더 스톰</a>
+        <a class="mdl-navigation__link" href="/cyber/overwatch">오버워치</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/supporters">서포터즈</a>
+        <a class="mdl-navigation__link" href="/booth">부스</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="http://labyrinth.postech.ac.kr:1257">미궁</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/schedule">일정</a>
+        <div class="science-war-drawer-separator"></div>
+        <a class="mdl-navigation__link" href="/map">지도</a>
       </nav>
     </div>
 
 
 {% block content %}{% endblock %}
 
-    <footer class="science-war-footer mdl-mega-footer">
-      <div class="mdl-mega-footer--top-section">
-        <div class="mdl-mega-footer--left-section">
-          <button class="mdl-mega-footer--social-btn science-war-icon" onclick="location.href='https://www.facebook.com/Postech.Victory/'"></button>
-          &nbsp;
-          <button class="mdl-mega-footer--social-btn poapper-icon" onclick="location.href='/poapper'"></button>
-          &nbsp;
-          <button class="mdl-mega-footer--social-btn pbs-icon" onclick="location.href='https://www.youtube.com/channel/UC0l7--B5331jo2WwX1avPOg'"></button>
+      <footer class="science-war-footer mdl-mega-footer">
+        <div class="mdl-mega-footer--top-section">
+          <div class="mdl-mega-footer--left-section">
+            <button class="mdl-mega-footer--social-btn science-war-icon" onclick="location.href='https://www.facebook.com/Postech.Victory/'"></button>
+            &nbsp;
+            <button class="mdl-mega-footer--social-btn poapper-icon" onclick="location.href='/poapper'"></button>
+            &nbsp;
+            <button class="mdl-mega-footer--social-btn pbs-icon" onclick="location.href='https://www.youtube.com/channel/UC0l7--B5331jo2WwX1avPOg'"></button>
+          </div>
+          <div class="mdl-mega-footer--right-section">
+            <a class="mdl-typography--font-light" href="#top">
+              상단으로
+              <i class="material-icons">expand_less</i>
+            </a>
+          </div>
         </div>
-        <div class="mdl-mega-footer--right-section">
-          <a class="mdl-typography--font-light" href="#top">
-            상단으로
-            <i class="material-icons">expand_less</i>
-          </a>
+
+        <div class="mdl-mega-footer--middle-section">
+          <p class="mdl-typography--font-light">© 2017 포카전준비위원회<br>Powered by PoApper</p>
         </div>
-      </div>
-
-      <div class="mdl-mega-footer--middle-section">
-        <p class="mdl-typography--font-light">© 2017 포카전준비위원회</p>
-        <p class="mdl-typography--font-light">현재 수정/개발중인 페이지입니다. (Powered by PoApper)</p>
-      </div>
-    </footer>
+      </footer>
     </div>
-    </div>
-
-
+  </div>
 {% block script %}{% endblock %}
 </body>
 </html>

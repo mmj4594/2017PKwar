@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^reload_banuser/$', views.reload_banuser),
     url(r'^reload_banword/$', views.reload_banword),
     url(r'^reload_freeze/$', views.reload_freeze),
+    url(r'^reload_match/$', views.reload_match),
 ]
