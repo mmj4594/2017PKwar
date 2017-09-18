@@ -9,11 +9,6 @@ from django.shortcuts import render
 def quiz(request):
 	return render(request, "quiz/quiz.html")
 
-def announce(request):
-	announcements = Announcement.objects.all()
-	
-	if (b
-
 def json(request):
 	bingos = Bingo.objects.all()
 
