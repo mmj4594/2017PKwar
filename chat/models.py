@@ -26,6 +26,7 @@ class LiveMatch(models.Model):
     p_score = models.IntegerField(default=0)
     k_score = models.IntegerField(default = 0)
     which_video = models.TextField()
+    which_chat = models.TextField(default="")
     def __str__(self):
         return self.match_name
 
