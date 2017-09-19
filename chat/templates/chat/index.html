@@ -47,12 +47,22 @@
       <div class="science-war-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
           <div class="science-war-player-card mdl-card mdl-shadow--3dp">
-            <iframe width="100%" height="auto" src="{{livematch.which_video}}" frameborder="0" allowfullscreen></iframe>
+            <div class="vedio-container">
+              <iframe src="{{livematch.which_video}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+            <div class="chat-container">
+              <iframe src="{{livematch.which_chat}}" frameborder="0"></iframe>
+            </div>
           </div>
         </div>
       </div>
       {% endfor %}
-
+<!--
       <div class="science-war-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="science-war-player-card mdl-card mdl-shadow--3dp">
@@ -97,6 +107,7 @@
 
         </div>
       </div>
+    -->
     </div>
 
     <div id="banned_words">
