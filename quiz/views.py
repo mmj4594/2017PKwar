@@ -9,6 +9,11 @@ from django.shortcuts import render
 def quiz(request):
 	return render(request, "quiz/quiz.html")
 
+def announcement(request):
+	announce = Announcement.objects.order_by('-pk')[0]
+
+	return JsonResponse({'num': announce.pk, 'is_quiz_start': announce.is_quiz_start, 'ment': announce.ment})
+
 def json(request):
 	bingos = Bingo.objects.all()
 
