@@ -45,3 +45,7 @@ class FinishedMatch(models.Model):
     which_video = models.TextField()
     def __str__(self):
         return self.match_name
+
+class Result(models.Model):
+    p_score = models.IntegerField(default=0)
+    k_score = models.IntegerField(default=0)

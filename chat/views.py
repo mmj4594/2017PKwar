@@ -9,12 +9,14 @@ def index(request):
     is_freeze = Freeze.objects.all()
     livematch = LiveMatch.objects.all()
     matches = FinishedMatch.objects.all()
+    result = Result.objects.all()
     context = {
     'banned_words': banned_words,
     'banned_users': banned_users,
     'is_freeze': is_freeze,
     'livematch': livematch,
     'matches': matches,
+    'result': result,
     }
     return render(request, "chat/index.html", context)
 
