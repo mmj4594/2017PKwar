@@ -644,21 +644,27 @@ a img{
 }
 
 .postech-title {
-  height: 80px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Teko', sans-serif;
   color: rgb(200, 1, 80);
 }
 
 .kaist-title {
-  height: 80px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Teko', sans-serif;
   color: rgb(20, 135, 200);
+}
+
+.science-war-event-card__postech.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/postech.png') center / cover;
+}
+
+.science-war-event-card__kaist.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/kaist.png') center / cover;
 }
 
 .science-war-event-card__result.mdl-card {
@@ -700,7 +706,7 @@ a img{
 .science-war-event-card__overwatch.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../images/hacking.png') center / cover;
+  background: url('../images/overwatch.png') center / cover;
 }
 
 .science-war-event-card__soccer.mdl-card {
@@ -742,13 +748,27 @@ a img{
 .science-war-event-card__basketball.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../images/basektball.png') center / cover;
+  background: url('../images/basketball.png') center / cover;
+}
+
+.science-war-event-card__postech > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(200, 1, 80, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__kaist > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(20, 135, 200, 0.8);
+  text-align: center;
 }
 
 .science-war-event-card__result > .mdl-card__actions {
   height: 40px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0);
   text-align: center;
 }
 
