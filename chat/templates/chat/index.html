@@ -36,13 +36,14 @@
       </div>
 
       {% if result.is_end == False %}
-      <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">진행중인 경기</div>
       <div class="livematch">
-      {% for livematch in livematch %}
+
         <div class="science-war-supporters-section">
           <div class="science-war-supporters-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">진행중인 경기</div>
+            {% for livematch in livematch %}
             <div class="science-war-card-container mdl-grid">
-              <div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
                 <div class="science-war-event-card__{{livematch.match_name}} mdl-card mdl-shadow--3dp">
                   <div class="mdl-card__actions">
                     <span class="science-war-card-image__event">{{livematch.경기명}}</span>
@@ -61,10 +62,28 @@
                   <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast science-war-result-score-text"><div><span>{{livematch.k_score}}</span></div></div>
                 </div>
               </div>
+
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+                  <div class="vedio-container">
+                    <iframe src="{{livematch.which_video}}" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+
+      	{% if livematch.which_chat != "" %}
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="science-war-player-card mdl-card mdl-shadow--3dp">
+                  <div class="chat-container">
+                    <iframe src="{{livematch.which_chat}}" frameborder="0"></iframe>
+                  </div>
+                </div>
+              </div>
+      	{% endif %}
             </div>
+            {% endfor %}
           </div>
         </div>
-      {% endfor %}
       </div>
 
 
@@ -110,27 +129,7 @@
     {% endif %}
 
 
-      {% for livematch in livematch %}
-      <div class="science-war-card-container mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
-            <div class="vedio-container">
-              <iframe src="{{livematch.which_video}}" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
 
-	{% if livematch.which_chat != "" %}
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-          <div class="science-war-player-card mdl-card mdl-shadow--3dp">
-            <div class="chat-container">
-              <iframe src="{{livematch.which_chat}}" frameborder="0"></iframe>
-            </div>
-          </div>
-        </div>
-	{% endif %}
-      </div>
-      {% endfor %}
 <!--
       <div class="science-war-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
