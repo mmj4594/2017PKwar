@@ -257,7 +257,7 @@
         zoom: 15,
         center: centerLating
     };
-    var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">해킹<p>KAIST<br>오후 9:00 ~ 다음 날 오전 9:00</p></div>';
+    var contentString = '<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">해킹<p>KAIST<br>오전 9:00 ~ 오후 9:00</p></div>';
     var infowindow = new google.maps.InfoWindow({content: contentString});
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     var marker = new google.maps.Marker({
@@ -267,7 +267,7 @@
     });
 
     infowindow.open(map, marker);
-    
+
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });
