@@ -46,6 +46,33 @@ def json(request):
 	qn = {}
 	qn["num"] = quiznow.quiz_now.quiz_number
 	qn["content"] = quiznow.quiz_now.quiz_content
+	if quiznow.quiz_now.quiz_image:
+		qn["url"] = quiznow.quiz_now.quiz_image.url
+	else:
+		qn["url"] = ""
+
+	if quiznow.quiz_now.option1:
+		qn["option1"] = quiznow.quiz_now.option1
+	
+	if quiznow.quiz_now.option2:
+		qn["option2"] = quiznow.quiz_now.option2
+									
+	if quiznow.quiz_now.option3:
+		qn["option3"] = quiznow.quiz_now.option3
+	if quiznow.quiz_now.option4:
+		qn["option4"] = quiznow.quiz_now.option4
+	if quiznow.quiz_now.option5:
+		qn["option5"] = quiznow.quiz_now.option5
+	if quiznow.quiz_now.option6:
+		qn["option6"] = quiznow.quiz_now.option6
+	if quiznow.quiz_now.option7:
+		qn["option7"] = quiznow.quiz_now.option7
+	if quiznow.quiz_now.option8:
+		qn["option8"] = quiznow.quiz_now.option8
+	if quiznow.quiz_now.option9:
+		qn["option9"] = quiznow.quiz_now.option9
+	if quiznow.quiz_now.option10:
+		qn["option10"] = quiznow.quiz_now.option10
 
 	
 	return JsonResponse({'quiznow': qn, 'postech_bingo': postech, 'kaist_bingo': kaist, 'postechscore': postechscore, 'kaistscore': kaistscore, 'postechrw': postechrw, 'kaistrw': kaistrw, })
