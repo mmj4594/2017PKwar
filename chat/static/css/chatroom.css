@@ -644,21 +644,33 @@ a img{
 }
 
 .postech-title {
-  height: 80px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Teko', sans-serif;
   color: rgb(200, 1, 80);
 }
 
 .kaist-title {
-  height: 80px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Teko', sans-serif;
   color: rgb(20, 135, 200);
+}
+
+.science-war-event-card__postech.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/postech.png') center / cover;
+}
+
+.science-war-event-card__kaist.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/kaist.png') center / cover;
+}
+
+.science-war-event-card__result.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/postech-kaist.png') center / cover;
 }
 
 .science-war-event-card__starcraft.mdl-card {
@@ -694,7 +706,7 @@ a img{
 .science-war-event-card__overwatch.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../images/hacking.png') center / cover;
+  background: url('../images/overwatch.png') center / cover;
 }
 
 .science-war-event-card__soccer.mdl-card {
@@ -736,7 +748,34 @@ a img{
 .science-war-event-card__basketball.mdl-card {
   width: 100%;
   padding-top: 100%;
-  background: url('../images/basektball.png') center / cover;
+  background: url('../images/basketball.png') center / cover;
+}
+
+.science-war-event-card__hacking.mdl-card {
+  width: 100%;
+  padding-top: 100%;
+  background: url('../images/hacking.png') center / cover;
+}
+
+.science-war-event-card__postech > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(200, 1, 80, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__kaist > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(20, 135, 200, 0.8);
+  text-align: center;
+}
+
+.science-war-event-card__result > .mdl-card__actions {
+  height: 40px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0);
+  text-align: center;
 }
 
 .science-war-event-card__starcraft > .mdl-card__actions {
@@ -869,20 +908,6 @@ a img{
   padding-top: 100%;
 }
 
-@media (max-width: 840px) {
-  .science-war-match-postech-score:before {
-    content: "";
-    display: block;
-    padding-top: calc(200% + 16px);
-  }
-
-  .science-war-match-kaist-score:before {
-    content: "";
-    display: block;
-    padding-top: calc(200% + 16px);
-  }
-}
-
 .science-war-result-score-text {
   position: absolute;
   top: 0;
@@ -904,6 +929,48 @@ a img{
   text-align: center;
   vertical-align: middle;
   color: white;
+}
+
+@media (max-width: 840px) {
+  .science-war-match-postech-score:before {
+    content: "";
+    display: block;
+    padding-top: calc(200% + 16px);
+  }
+
+  .science-war-match-kaist-score:before {
+    content: "";
+    display: block;
+    padding-top: calc(200% + 16px);
+  }
+
+  .science-war-result-score-text div {
+    display: table;
+    width: 100%;
+    height: 100%;
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .science-war-match-postech-score:before {
+    content: "";
+    display: block;
+    padding-top: calc(200% + 16px);
+  }
+
+  .science-war-match-kaist-score:before {
+    content: "";
+    display: block;
+    padding-top: calc(200% + 16px);
+  }
+
+  .science-war-result-score-text div {
+    display: table;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+  }
 }
 
 .mdl-card {

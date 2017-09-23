@@ -26,7 +26,7 @@ class LiveMatch(models.Model):
     p_score = models.IntegerField(default=0)
     k_score = models.IntegerField(default = 0)
     which_video = models.TextField()
-    which_chat = models.TextField(default="")
+    which_chat = models.TextField(default="", blank=True)
     def __str__(self):
         return self.match_name
 
@@ -45,3 +45,8 @@ class FinishedMatch(models.Model):
     which_video = models.TextField()
     def __str__(self):
         return self.match_name
+
+class Result(models.Model):
+    p_score = models.IntegerField(default=0)
+    k_score = models.IntegerField(default=0)
+    is_end = models.BooleanField(default=False)

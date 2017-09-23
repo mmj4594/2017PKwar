@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, Http404
-from .models import BannedWord, BannedUser, AdminUser, Freeze, LiveMatch, FinishedMatch
+from .models import BannedWord, BannedUser, AdminUser, Freeze, LiveMatch, FinishedMatch, Result
 
 
 def index(request):
@@ -9,12 +9,14 @@ def index(request):
     is_freeze = Freeze.objects.all()
     livematch = LiveMatch.objects.all()
     matches = FinishedMatch.objects.all()
+    result = Result.objects.all()
     context = {
     'banned_words': banned_words,
     'banned_users': banned_users,
     'is_freeze': is_freeze,
     'livematch': livematch,
     'matches': matches,
+    'result': result[0],
     }
     return render(request, "chat/index.html", context)
 

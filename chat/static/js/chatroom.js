@@ -10,7 +10,7 @@ setInterval(function(){
     $.ajax({url: "/live/reload_match", success: function(result){
         $(".livematch").html(result);
     }});
-}, 300000);
+}, 1000);
 
 setInterval(function(){
     $.ajax({url: "/live/reload_banuser", success: function(result){

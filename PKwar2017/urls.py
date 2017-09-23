@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^live/', include('chat.urls')),
     url(r'^', include('page.urls')),
-	url(r'^quiz/', include('quiz.urls')),
+    url(r'^quiz/', include('quiz.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
