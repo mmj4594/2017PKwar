@@ -7,8 +7,9 @@ var ws2 = new WebSocket((window.location.protocol == 'http:' ? 'ws://' : 'wss://
 
 
 setInterval(function(){
-    $.ajax({url: "/live/reload_match", success: function(result){
-        $(".livematch").html(result);
+    $.ajax({url: "/live/reload_match", success: function(result_html){
+        $("#scoreboard").html(result_html);
+        console.log('done');
     }});
 }, 1000);
 
