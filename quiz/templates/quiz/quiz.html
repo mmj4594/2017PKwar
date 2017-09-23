@@ -453,7 +453,49 @@
 			if (quiz_start) {
 				quiz.empty();
 				quiz.append($('<div class="quiz-number">QUIZ No.' + data.quiznow.num + '</div>'));
-				quiz.append($('<div class="quiz-content">' + data.quiznow.content + '</div>'));
+				quiz.append($('<div class="quiz-content"><img class="quiz-image" style="width: 100%" src=' + data.quiznow.url + '>'+ data.quiznow.content + '</div>'));
+
+				if (data.quiznow.option1) {
+					var option = $('<p class="option">1. ' + data.quiznow.option1 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option2) {
+					var option = $('<p class="option">2. ' + data.quiznow.option2 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option3) {
+					var option = $('<p class="option">3. ' + data.quiznow.option3 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option4) {
+					var option = $('<p class="option">4. ' + data.quiznow.option4 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option5) {
+					var option = $('<p class="option">5. ' + data.quiznow.option5 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option6) {
+					var option = $('<p class="option">6. ' + data.quiznow.option6 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option7) {
+					var option = $('<p class="option">7. ' + data.quiznow.option7 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option8) {
+					var option = $('<p class="option">8. ' + data.quiznow.option8 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option9) {
+					var option = $('<p class="option">9. ' + data.quiznow.option9 + "</p>");
+					$(".quiz-content").append(option);
+				}
+				if (data.quiznow.option10) {
+					var option = $('<p class="option">10. ' + data.quiznow.option10 + "</p>");
+					$(".quiz-content").append(option);
+				}
+
 				quiz.append($('<div id="clock">02:00</div>'));
 
 				time_left = 15;
